@@ -1,0 +1,720 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>使用记录_Linux和Docker | 踱鸽&amp;水晶蟹</title><meta name="keywords" content="Linux"><meta name="author" content="踱鸽&amp;水晶蟹"><meta name="copyright" content="踱鸽&amp;水晶蟹"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="使用记录_Linux和Docker"><meta name="application-name" content="使用记录_Linux和Docker"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="使用记录_Linux和Docker"><meta property="og:url" content="https://hexo.asteroidrocket.top/2018/11/01/使用记录/Linux和Docker/index.html"><meta property="og:site_name" content="踱鸽&amp;水晶蟹"><meta property="og:description" content="使用记录_Linux和Docker"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://hexo.asteroidrocket.top/img/default_cover.jpg"><meta property="article:author" content="踱鸽&amp;水晶蟹"><meta property="article:tag" content="Duo"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://hexo.asteroidrocket.top/img/default_cover.jpg"><meta name="description" content="使用记录_Linux和Docker"><link rel="shortcut icon" href="/icon/gu.ico"><link rel="canonical" href="https://hexo.asteroidrocket.top/2018/11/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/Linux%E5%92%8CDocker/"><link rel="preconnect" href="//npm.onmicrosoft.cn"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"再来一瓶！","backTitle":"谢谢惠顾！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 踱鸽&水晶蟹","link":"链接: ","source":"来源: 踱鸽&水晶蟹","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.onmicrosoft.cn/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.onmicrosoft.cn/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '踱鸽&水晶蟹',
+  title: '使用记录_Linux和Docker',
+  postAI: '',
+  pageFillDescription: '介绍, 一、安装CentOS7, 二、配置连接, 三、Linux, 实操篇, vi和vim编辑器, Linux常用命令, 组管理, 权限管理, 任务调度, 磁盘分区, Centos调整分区存储大小, Linux虚拟机增加磁盘大小后如何扩展现有目录空间, 网络配置, 进程管理, 服务管理, 监控, RPM和YUM, Shell编程, 四、Docker, 问题记录, 1宿主机无法访问容器里的服务, 2宿主机映射docker容器端口后宿主机防火墙未开放该端口外网仍然可以访问。, 可视化, 容器的数据卷使用——MySQL同步数据, Dockerfile 和 docker-compose.yml的区别, Dockerfile（脚本）, Docker compose, Docker问题排查介绍为了补充项目开发后部署和运维相关能力通过自建服务器学习一些相关知识因为过程中包含白嫖等可耻行为所以只记录不发布一安装准备闲置笔记本一台可以使用虚拟机代替如果使用云服务器直接跳过前三章节下载镜像通过阿里云镜像站下载这里使用常见镜像版本标准版含桌面约个新手上路我选择这个版不含桌面约个通过写入硬盘系统镜像据说用版及以前的会出问题这里我选择试用最新版中途无问题没做排错记录接下来通过写入镜像的盘给笔记本重做系统这里因为是闲置笔记本所以是硬盘完全格式化重做单系统如果打算双系统或者使用虚拟机操作略有不同这里不做过多介绍过程通过盘启动后可选择按进入编辑将变为执行然后屏幕上就会列出硬盘设备的详细信息我们从列表中挑出当前作为介质的盘的代码比如然后重起系统再次进入编辑修改内容注意修改成自己的盘代码然后执行即可进入图形化安装界面镜像默认基本环境是最小化安装无桌面所以这里手动选择一些带的服务器等待系统安装完成创建账户进入系统截止到写笔记的日期本人仍然为操作新手基本指令还需要摸索着来所以选择了带桌面系统并且切换为用户进行操作注意由于是笔记本安装系统做服务器需要修改一下笔记本合盖时系统状态修改取消改行注释并将修改为至此一个常规的系统的机器算是装完了接下来开始边学边用执行命令进行查看硬盘情况二配置连接本人目前并不能很好的掌握系统的常规使用但是在之前对一些工具有所耳闻此篇章用于记录工具配置连接工具连接系统的和文件传输的软件官方提供家庭和学校的免费下载链接宝塔也有终端知名度不高这里不选择使用上使用这个所以上也选择了这个目前只是简单使用差距并未体验到所以可以按喜好选择由于家里和办公室都无法通过外网访问所以分别在台式机笔记本系统笔记本上安装了这里就可以通过自己工作环境通过分配的虚拟直接连接到服务器了花生壳配置对应端口的内网映射可以将服务器的对应内容开放外网访问以后服务器部署项目后又用至此一台自己可用的服务器已经搭建完成了通过连接虚拟后可以通过指令操作服务器了三的世界里一切皆文件目录结构级层式树状目录结构常用指令目录设备管理配置文件创建普通用户后会在这里生成对应的文件系统管理员目录动态库用户安装的很多应用程序都在这个目录启动时使用的一些文件临时挂载的别的文件系统目录中存放着不断扩充的文件习惯将经常修改的目录放在这里包括各种日志文件实操篇和编辑器内置编辑器具有程序编辑能力相当于的增强版和的三种模式正常模式打开默认这种模式其他模式状态按返回该模式可以使用快捷键插入编辑模式按启动命令行模式按启动该模式可以使用命令来完成读取存盘替换离开等操作快捷键拷贝当前行拷贝下面行粘贴删除删除当前行删除下面行撤销操作文件中查询单词命令行下关键字回车输入就是查找下一个显示行号命令行下隐藏行号快速到达末行首行移动到指定行显示行号输入目标行数输入或者常用命令关机重启表示立即关机表示分钟后关机立即重启把内存数据同步到硬盘推荐关机或重启前执行一下用户登录和注销尽可能少用账号登录系统管理员权限过大避免误操作造成损失推荐使用普通用户登录可以通过用户名来切换成系统管理员身份注销登录用户管理添加一个用户用户名会在目录下创建用户名的文件夹并且默认情况会让该用户加入同名用户组用户组名用户名将用户指定到目标用户组指定用户的密码用户名回车之后输入密码删除一个用户用户名文件目录管理查看当前目录绝对路径查看当前目录下的内容显示所有以列表方式显示目标路径前往目标路径自己的家上一级创建目录创建多级目录创建空文件源目录新目录拷贝文件到指定目录递归复制整个文件夹删除文件或目录递归删除强制删除不提示移动或重命名目录相同为重命名目录不同为移动查看文件显示行号只读通常与一起使用文件分页查看文件空格键翻页上一页下一页分页查看文件不是全部加载而是根据显示内容加载大文件效率高显示文件开头部分内容默认显示行显示前行数字可变显示文件末尾部分内容默认显示行显示最后行实时追踪文档更新输出重定向覆盖写入追加写入输出内容到控制台软链接类似于快捷方式源文件软链接名查看执行过的历史命令查看最近的条命令执行编号的命令时间日期类显示当前日期显示当前年显示当前月显示当前日按格式显示时间连接符可以自己定设置时间以日历的方式显示时间显示一整年日历搜索查找类从指定目录内遍历搜索将符合的文件显示在终端目录文件名在目录下按文件名查询可以使用通配符目录用户名按文件所属用户进行查找目录文件大小限制按文件大小限制查找大于小于等于过滤查找管道符号将前一个命令的结果传递给后一个命令处理压缩和解压文件压缩文件后缀只压缩文件不压缩目录不保留原文件文件解压文件打包同时压缩后缀可打包压缩文件目录保留原文件文件压缩文件或目录后缀与类似压缩后可被识别文件解压文件或目录组管理中的每个用户必须属于一个组不能独立于组外在中每个文件有所有者所在组其他组的概念查看文件或目录所有者所在组用户名文件名修改文件所有者并不改变所在组组名创建一个组组名文件名修改文件所在组组名用户名改变用户所在组目录名用户名改变用户登录的初始目录权限管理位说明第位确定文件类型目录普通文件链接文件字符设备块文件第位所有者权限读权限写权限无权限执行权限第位所属组权限第位其他用户权限后面数字目录下文件数所有者所在组文件大小文件最后修改时间修改权限修改权限文件目录名所有者所在组其他人所有人使用变更权限还可以通过数字变更权限任务调度任务调度编辑显示删除磁盘分区分区的基础概念分区最多四个主分区最大支持分区支持无限多分区但是可能被操作系统限制最大支持分区介绍无论多少个分区都挂载在根目录分区只是组成整个文件系统的一部分硬盘分为硬盘和硬盘目前基本都是硬盘硬盘的标识符为表示分区所在设备类型表示盘号为基本盘为基本从属盘为辅助主盘为辅助从属盘表示分区是主分区或扩展分区从开始时逻辑分区查看分区挂载情况添加一块硬盘虚拟机添加硬盘分区格式化挂载目录先创建一个目录然后挂载设置自动挂载按规则编辑配置文件生效磁盘情况查询查询整个系统磁盘使用情况目录查询指定目录磁盘占用情况子目录深度调整分区存储大小例如将下转移到目录下查看待挂载硬盘查看物理卷查看分区大小备份文件终止文件进程切换到非路径下执行这个命令卸载删除所在逻辑卷扩大根目录所在的逻辑卷同步文件重建文件系统所需要的逻辑卷创建文件系统挂载文件系统恢复目录的内容删除下面的备份文件虚拟机增加磁盘大小后如何扩展现有目录空间例如查看磁盘情况如何把中剩余空间增加到文件夹步骤你可以使用分区管理工具如或来创建新的分区我将展示如何使用命令创建新的分区现在你将看到的分区表信息输入来创建一个新分区选择分区类型如果你只需将剩余空间用于你可以选择来创建一个主分区确定新分区的起始扇区和大小如果你只需使用默认值以使用整个未分配空间可以连续按键输入来保存并退出步骤将新的分区标记为物理卷使用命令将新创建的分区标记为物理卷如果提示是因为系统没有识别到新的分区需要重新加载一下步骤将新的物理卷添加到卷组使用命令将新创建的物理卷添加到现有的卷组中步骤扩展逻辑卷使用命令将逻辑卷扩展到新的物理卷上步骤重新调整文件系统大小根据文件系统类型使用适当的工具调整文件系统大小网络配置修改配置文件指定固定地址的网络地址配置文件在文件夹下网卡对应的配置文件为使用静态地址默认为是否开机启用设置的静态地址子网掩码网关地址服务器进程管理查看目前系统中哪些正在执行正在执行的情况显示当前终端的所有进程信息以用户的格式显示进程信息显示后台进程运行的参数终止进程选项进程号通过进程号杀死进程强制终止进程名称通过进程名称杀死进程支持通配符查看进程树显示进程显示进程所属用户服务管理服务本质就是线程但是运行在后台通常会监听某一端口等待其他程序请求服务名操作某一服务服务名设置服务开机启动监控监控进程默认秒刷新一次监控网络和软件包名称查询软件包是否安装软件包名称查询软件安装详情软件包名称查询软件包中的文件所在位置文件名查询文件属于哪个软件包软件包名称卸载软件包软件包全路径名称安装软件包安装提示进度条是一个前端的软件包管理器能够从指定远程服务器自动下载包包并安装并且一次性安装所有依赖软件名查询服务器上有没有这个软件软件名安装软件默认安装最新版本编程是一个命令行解释器它为用户提供了一个向内核发送请求以便运行程序的界面系统级程序用户可以用来启动挂起停止甚至编写一些程序快速入门脚本以开头脚本需要有执行权限无执行权限可以通过脚本文件来执行四开发者学运维基本都是项目部署驱动学习方向所以学是目标是前置技术边学边掌握虽然上也可以用但是还是跟随主流吧安装官网已经很详细了按照步骤执行对应指令即可这里已经替换为阿里云的镜像地址配置阿里云容器镜像加速这里是按照阿里云服务器的容器镜像加速配置进行配置由于我用的自建系统配置后是否有加速效果还未考证问题记录宿主机无法访问容器里的服务报错原因网卡地址冲突其中命令需要安装关闭虚拟网卡开启虚拟网卡宿主机映射容器端口后宿主机防火墙未开放该端口外网仍然可以访问有两种防火墙和一般用宝塔或者下面命令都是在中开启对应端口原因新容器的时候在新建规则将容器映射端口开放给所有如果想要关闭公网访问需要手动删除规则学习常用的命令可视化容器的数据卷使用同步数据和的区别是拿来构建自定义镜像的并没有直接生成容器文件是做容器编排以部署环境里面包含使用各种镜像创建的容器服务使用的镜像可以是网络上的也可以是根据使用文件来生成的镜像脚本使用为项目构建镜像部分指令指定基础镜像执行命令每一条都会生成一层一个需求尽量使用这样就减少了即减少了分层源路径下的复制到新一层的镜像路径指定工作目录指定下层工作的目录为容器内的尽量使用绝对目录添加能自动解压文件以下例子最终在下拷贝与类似只是不能解压缩文件执行命令设置环境变量定义那么之后就可以使用来执行了挂载端口暴露端口端口是官方开源项目负责实现对容器集群的快速编排部署分布式应用通过一个单独的模板文件格式来定义一组相关联的应用容器为一个项目下载修改该文件的权限为可执行查看是否成功一般使用步骤创建一个空目录定义方便迁移到任何地方编写文件运行启动服务关闭服务编写文件将所管理的容器分为三层工程服务及容器中定义所有服务组成了一个工程节点下即为服务服务之下为容器容器与容器直之间可以以服务名称为域名进行访问比如在服务中可以通过这个地址来访问这个服务示例指定服务名称指定服务使用的镜像指定容器名称指定服务运行的端口指定容器中需要挂载的文件指定容器的环境变量指定服务名称指定服务使用的镜像指定容器名称指定服务运行的端口指定容器中需要挂载的文件问题排查问题发现发版时构建失败不稳定问题分析构建编译打包阶段命令执行成功目标服务器命令或命令出问题目标服务器中直接执行命令报磁盘空间不足具体分析发现目录下磁盘占用非常大分析磁盘占用参考命令查看大文件命令只适合当前目录查看当前目录总共占的容量不单独列出各子项占用的容量查看整体磁盘使用情况查看当前目录下一级子文件和子目录占用的磁盘容量查找目录下所有大于的所有文件有效信息如下通过查看主要是目录下文件夹很大思考过程多台相同配置环境类似的服务器仅这一个有次问题要对比一下配置差异对比发现差异不同并且配置为此文件夹会随着时间很快被占用临时解决方案如下清理容器暂定方案编辑追加配置修改扩展安装方式相同并且在和都没有发现相关额外配置为啥的默认配置会不同是与版本差异么一个是一个是的模式明细感觉对磁盘的利用方式不一样有何优势的和模式是两种不同的存储驱动程序它们各自具有一些优势和特点是一种高级存储管理器它使用了内核提供的设备映射技术它的优势在于支持高级的存储功能如快照和克隆还可以使用不同的存储池来管理容器的镜像和数据提供了更好的隔离性和可管理性然而使用可能需要更多的配置和管理工作并且在处理大量写入操作时可能会出现性能瓶颈是的默认存储驱动程序它直接使用主机操作系统的文件系统来管理容器的镜像和数据的优势在于简单易用无需额外的配置和管理它适用于开发和测试环境但在生产环境中可能会遇到性能和可扩展性方面的限制综上所述适用于需要高级存储功能和更好隔离性的场景但需要更多的配置和管理而适用于简单的开发和测试环境选择哪种存储驱动程序取决于您的具体需求和环境在多次构建镜像后对主机磁盘的占用较少而占用较多的原因是它们的存储机制不同使用了写时复制的机制当使用构建镜像时它会创建一个基础镜像和一个写入层每次构建镜像时只有更改的部分会被写入到写入层而不会对基础镜像进行修改这样可以节省磁盘空间因为多个镜像可以共享相同的基础层因此对主机磁盘的占用相对较少相反直接使用主机操作系统的文件系统来管理镜像和数据每次构建镜像时会在主机文件系统上创建一个完整的镜像副本包括所有的更改和文件这导致每个构建都会占用更多的磁盘空间因为每个镜像都是完整的副本因此如果您需要在多次构建镜像后节省磁盘空间可能是更好的选择但请注意可能需要更多的配置和管理工作并且在处理大量写入操作时可能会出现性能瓶颈网上有主动指定模式的配置教程相关参数具体作用是什么年月日虚拟机报错未知的错误未知经过排查虚拟机可访问外网但还是是用不了命令说明是镜像没有了那么就得下载一个来更新在安装完后一般需要修改源才能够在安装更新包时获得比较理想的速度国内比较快的有阿里源源这里以阿里源为例子',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-06 15:38:35',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/icon/goutou_118.gif"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/big-counter.css"/><script async="async" src="https://npm.onmicrosoft.cn/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">程序员-踱鸽</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="博客站点"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="博客站点"/><span class="back-menu-item-text">博客站点</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://gitee.com/duo-ge" title="gitee"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="gitee"/><span class="back-menu-item-text">gitee</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">插画师-水晶蟹</div><div class="back-menu-list"><a class="back-menu-item" href="/album/" title="插画师图集"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="插画师图集"/><span class="back-menu-item-text">插画师图集</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://emotion.xiaokang.me/#/" title="表情包速查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="表情包速查"/><span class="back-menu-item-text">表情包速查</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fontawesome.com/icons" title="fontawesome6图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="fontawesome6图标"/><span class="back-menu-item-text">fontawesome6图标</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">踱鸽&amp;水晶蟹</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 全部</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 作品</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/projects/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 项目</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 图集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 分享</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 影视</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 书籍</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/web/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 梗言梗语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 冷暖自知</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://bu.dusays.com/2021/01/15/f75bd8b801df7.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/f75bd8b801df7.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://bu.dusays.com/2021/01/15/35d39f00bead9.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/35d39f00bead9.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>2</sup></a><a href="/tags/Mysql/" style="font-size: 1.05rem;">Mysql<sup>2</sup></a><a href="/tags/RabbitMQ/" style="font-size: 1.05rem;">RabbitMQ<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/redis/" style="font-size: 1.05rem;">redis<sup>1</sup></a><a href="/tags/seata/" style="font-size: 1.05rem;">seata<sup>1</sup></a><a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 1.05rem;">中间件<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 1.05rem;">代码<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">工具<sup>2</sup></a><a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 1.05rem;">标签<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" itemprop="url">使用记录</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Linux/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Linux</span></a></span></div></div><h1 class="post-title" itemprop="name headline">使用记录_Linux和Docker</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2018-10-31T16:00:00.000Z" title="发表于 2018-11-01 00:00:00">2018-11-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-08-06T07:38:35.079Z" title="更新于 2024-08-06 15:38:35">2024-08-06</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://hexo.asteroidrocket.top/2018/11/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/Linux%E5%92%8CDocker/"><header><a class="post-meta-categories" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" itemprop="url">使用记录</a><a href="/tags/Linux/" tabindex="-1" itemprop="url">Linux</a><h1 id="CrawlerTitle" itemprop="name headline">使用记录_Linux和Docker</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">踱鸽&amp;水晶蟹</span><time itemprop="dateCreated datePublished" datetime="2018-10-31T16:00:00.000Z" title="发表于 2018-11-01 00:00:00">2018-11-01</time><time itemprop="dateCreated datePublished" datetime="2024-08-06T07:38:35.079Z" title="更新于 2024-08-06 15:38:35">2024-08-06</time></header><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>为了补充项目开发后部署和运维相关能力，通过自建Linux服务器学习一些相关知识。</p>
+<p>（因为过程中包含“白嫖”等可耻行为，所以只记录，不发布）</p>
+<h2 id="一、安装CentOS7"><a href="#一、安装CentOS7" class="headerlink" title="一、安装CentOS7"></a>一、安装CentOS7</h2><p>准备：闲置笔记本一台（可以使用虚拟机代替，如果使用云服务器，直接跳过前三章节）</p>
+<p>下载镜像：<a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/centos/7/isos/%EF%BC%88%E9%80%9A%E8%BF%87%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E7%AB%99%E4%B8%8B%E8%BD%BD%EF%BC%89">https://mirrors.aliyun.com/centos/7/isos/（通过阿里云镜像站下载）</a></p>
+<p>这里使用centos7,常见镜像版本：</p>
+<p>DVD — 标准版（含桌面）,约4.5个G，新手上路，我选择这个。 </p>
+<p>Minimal — mini版，（不含桌面），约1个G。</p>
+<p>通过UltraISO写入硬盘系统镜像（据说用9.3.6版及以前的会出问题，这里我选择试用最新版，中途无问题，没做排错记录）</p>
+<p>接下来，通过写入镜像的U盘给笔记本重做系统，（这里因为是闲置笔记本，所以是硬盘完全格式化，重做单Linux系统。如果打算双系统或者使用虚拟机，操作略有不同，这里不做过多介绍。）</p>
+<p>过程: 通过U盘启动后，可选择Install CentOS 7，按“E”，进入编辑。</p>
+<p>将</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">setparams &#x27;Install CentOS Linux 7&#x27; <br>linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 xdriver=vesa nomodeset quiet<br>initrdefi /images/pxeboot/initrd.img<br></code></pre></td></tr></table></figure>
+
+<p>变为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">setparams &#x27;Install CentOS Linux 7&#x27; <br>linuxefi /images/pxeboot/vmlinuz linux dd nomodeset quiet<br>initrdefi /images/pxeboot/initrd.img<br></code></pre></td></tr></table></figure>
+
+<p>Ctrl+X执行，然后屏幕上就会列出硬盘设备的详细信息，我们从列表中挑出当前作为介质的U盘的代码（比如sda4）,然后重起系统,再次进入编辑，修改内容(注意修改成自己的U盘代码)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">setparams &#x27;Install CentOS Linux 7&#x27;<br>linuxefi /images/pxeboot/vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sda4 quiet<br>initrdefi /images/pxeboot/initrd.img<br></code></pre></td></tr></table></figure>
+
+<p>然后Ctrl+X执行，即可进入图形化安装界面。</p>
+<p>DVD镜像，默认基本环境是最小化安装（无桌面），所以这里手动选择一些带GUI的服务器。</p>
+<p>等待系统安装完成，创建账户，进入系统。截止到写笔记的日期，本人仍然为Linux操作新手，基本指令还需要摸索着来，所以选择了带桌面系统，并且切换为root用户进行操作。</p>
+<p>注意，由于是笔记本安装系统做服务器，需要修改一下笔记本合盖时系统状态：</p>
+<p>修改  &#x2F;etc&#x2F;system&#x2F;logind.conf     取消HandleLidSwitch&#x3D;suspend改行注释，并将suspend修改为lock。</p>
+<p>至此，一个常规的Linux系统的机器算是装完了。接下来开始边学边用。</p>
+<p>执行命令：lsblk 进行查看 硬盘情况</p>
+<h2 id="二、配置连接"><a href="#二、配置连接" class="headerlink" title="二、配置连接"></a>二、配置连接</h2><p>本人目前并不能很好的掌握Linux系统的常规使用，但是在之前对一些工具有所耳闻，此篇章用于记录工具配置。</p>
+<blockquote>
+<p>1，SSH连接工具：</p>
+<p>FinalShell。</p>
+<p>Xshell,Xftp。连接Linux系统的和文件传输的软件，官方提供家庭和学校的免费下载链接。</p>
+<p>宝塔也有SSH终端，知名度不高，这里不选择使用。</p>
+<p>SecureCRT,SecureFX。</p>
+<p>Termius。 mac上使用这个，所以windows上也选择了这个。</p>
+<p>（目前只是简单使用，差距并未体验到，所以可以按喜好选择）</p>
+</blockquote>
+<blockquote>
+<p>由于家里和办公室都无法通过外网访问，所以分别在台式机，笔记本，Linux系统笔记本上安装了ZeroTier，这里就可以通过自己工作环境通过分配的虚拟IP直接连接到Linux服务器了，花生壳配置对应端口的内网映射，可以将服务器的对应内容开放外网访问，以后服务器部署项目后又用。</p>
+</blockquote>
+<p>至此，一台自己可用的Linux服务器已经搭建完成了。</p>
+<p>通过Xshell连接虚拟IP后，可以通过指令操作服务器了。</p>
+<h2 id="三、Linux"><a href="#三、Linux" class="headerlink" title="三、Linux"></a>三、Linux</h2><blockquote>
+<p>Linux的世界里，一切皆文件。</p>
+</blockquote>
+<p>Linux目录结构：级层式树状目录结构</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">[root@duo /]# ls<br>bin  boot  dev  etc  home  install.sh  lib  lib64  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  www<br></code></pre></td></tr></table></figure>
+
+<p>&#x2F;bin	常用指令目录</p>
+<p>&#x2F;dev	设备管理</p>
+<p>&#x2F;etc	 配置文件</p>
+<p>&#x2F;home	创建普通用户后，会在这里生成对应的文件</p>
+<p>&#x2F;root	  系统管理员目录</p>
+<p>&#x2F;lib		动态库</p>
+<p>&#x2F;usr&#x2F;local		用户安装的很多应用程序都在这个目录</p>
+<p>&#x2F;boot		启动Linux时使用的一些文件</p>
+<p>&#x2F;mnt		临时挂载的别的文件系统</p>
+<p>&#x2F;var		目录中存放着不断扩充的文件，习惯将经常修改的目录放在这里，包括各种日志文件</p>
+<h3 id="实操篇"><a href="#实操篇" class="headerlink" title="实操篇"></a>实操篇</h3><h4 id="vi和vim编辑器"><a href="#vi和vim编辑器" class="headerlink" title="vi和vim编辑器"></a>vi和vim编辑器</h4><p>Linux内置vi编辑器，Vim具有程序编辑能力，相当于vi的增强版。</p>
+<p>vi和vim的三种模式：</p>
+<p>1，正常模式：打开默认这种模式，其他模式状态按ESC返回该模式。可以使用快捷键。</p>
+<p>2，插入&#x2F;编辑模式： 按i启动，</p>
+<p>3，命令行模式：按:启动该模式，可以使用命令来完成 读取、存盘、替换、离开 等操作。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://gitee.com/duo-ge/duo-ge/raw/pic/%E5%9B%BE%E7%89%87%E5%BA%93/vi.png"></p>
+<p>快捷键：</p>
+<p>拷贝当前行：yy		拷贝下面5行：5yy</p>
+<p>粘贴：p</p>
+<p>删除</p>
+<p>删除当前行：dd		删除下面3行：3dd</p>
+<p>撤销操作：u</p>
+<p>文件中查询单词(命令行下 )：&#x2F;关键字  ，回车 。    输入n 就是查找下一个</p>
+<p>显示行号(命令行下 )：set nu		隐藏行号：set nonu</p>
+<p>快速到达末行：G		首行：gg		</p>
+<p>移动到指定行：1，显示行号	2，输入目标行数	3，输入G或者gg</p>
+<h4 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h4><p><strong>关机重启：</strong></p>
+<p>shutdown -h now：表示立即关机 	halt</p>
+<p>shutdown -h 1：表示1分钟后关机</p>
+<p>shutdown -r now：立即重启			reboot</p>
+<p>sync：把内存数据同步到硬盘，推荐关机或重启前执行一下。</p>
+<p><strong>用户登录和注销：</strong></p>
+<p>1，尽可能少用root账号登录，系统管理员权限过大，避免误操作造成损失。</p>
+<p>推荐使用普通用户登录，可以通过“su - 用户名”来切换成系统管理员身份</p>
+<p>2，logout 注销登录</p>
+<p><strong>用户管理：</strong></p>
+<p>1，添加一个用户：useradd &lt;用户名&gt;</p>
+<p>会在&#x2F;home目录下创建 用户名的文件夹，并且默认情况 会让该用户加入同名用户组</p>
+<p>useradd -g &lt;用户组名&gt; &lt;用户名&gt;，将用户指定到目标用户组</p>
+<p>2，指定用户的密码：passwd &lt;用户名&gt;</p>
+<p>回车之后输入密码。</p>
+<p>3，删除一个用户：userdel &lt;用户名&gt;</p>
+<p><strong>文件目录管理</strong></p>
+<p>pwd：查看当前目录绝对路径</p>
+<p>ls：查看当前目录下的内容			-a 显示所有   -l 以列表方式显示</p>
+<p>cd &lt;目标路径&gt;：前往目标路径。		~ 自己的家	.. 上一级</p>
+<p>mkdir：创建目录			-p 创建多级目录</p>
+<p>touch：创建空文件			</p>
+<p>cp &lt;源目录&gt; &lt;新目录&gt;：拷贝文件到指定目录		-r 递归复制整个文件夹</p>
+<p>rm：删除文件或目录			-r 递归删除	-f 强制删除不提示</p>
+<p>mv：移动或重命名			（目录相同为重命名，目录不同为移动）</p>
+<p>cat：查看文件			-n 显示行号         （只读，通常与more一起使用  cat -n &lt;文件&gt; | more）</p>
+<p>more：分页查看文件			（空格键  翻页，Ctrl+B 上一页，Ctrl+F下一页）</p>
+<p>less：分页查看文件，不是全部加载，而是根据显示内容加载，大文件效率高</p>
+<p>head：显示文件开头部分内容，默认显示10行			-n 5 显示前5行（数字可变）</p>
+<p>tail：显示文件末尾部分内容，默认显示10行		-n 5 显示最后5行	-f 实时追踪文档更新</p>
+<p>&gt;：输出重定向		（覆盖写入）</p>
+<p>&gt;&gt;：追加写入</p>
+<p>echo：输出内容到控制台</p>
+<p>ln：软链接，类似于快捷方式		ln -s &lt;源文件&gt; &lt;软链接名&gt;</p>
+<p>history：查看执行过的历史命令	history 10 查看最近的10条命令	!10 执行编号10的命令</p>
+<p><strong>时间日期类：</strong></p>
+<p>date：显示当前日期			+%Y显示当前年	+%m显示当前月	+%d显示当前日</p>
+<p>date “+%Y-%m-%d %H:%M:%S”		按格式显示时间，连接符可以自己定</p>
+<p>date -s “2020-02-02 02:02:02”			设置时间</p>
+<p>cal：以日历的方式显示时间				cal 2020 显示一整年日历</p>
+<p><strong>搜索查找类</strong></p>
+<p>find：从指定目录内遍历搜索，将符合的文件显示在终端。</p>
+<p>find &lt;目录&gt; -name &lt;文件名&gt;			在目录下 按文件名查询，可以使用通配符</p>
+<p>find &lt;目录&gt; -user &lt;用户名&gt;			按文件所属用户进行查找</p>
+<p>find &lt;目录&gt; -size &lt;文件大小限制&gt;		按文件大小限制查找，+n 大于，-n小于，n等于</p>
+<p>grep：过滤查找			</p>
+<p>| ：管道符号，将前一个命令的结果传递给后一个命令处理</p>
+<p><strong>压缩和解压</strong></p>
+<p>gzip &lt;文件&gt;：压缩文件			后缀 .gz    只压缩文件不压缩目录，不保留原文件<br>gzip -d &lt;文件&gt;： 解压文件</p>
+<p>tar： 打包同时压缩  后缀 .tar.gz 可打包压缩文件目录，保留原文件</p>
+<p>zip &lt;文件&gt;： 压缩文件或目录		后缀 .zip 与tar类似，压缩后可被windows识别<br>unzip &lt;文件&gt;： 解压文件或目录</p>
+<h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><blockquote>
+<p>Linux中的每个用户必须属于一个组，不能独立于组外。</p>
+<p>在Linux中每个文件有 所有者、所在组，其他组的概念。</p>
+</blockquote>
+<p>1，ls -ahl：查看文件或目录所有者、所在组</p>
+<p>2，chown &lt;用户名&gt; &lt;文件名&gt;	修改文件所有者，并不改变所在组</p>
+<p>3，groupadd &lt;组名&gt;：创建一个组</p>
+<p>4，chgrp &lt;组名&gt; &lt;文件名&gt;：修改文件所在组</p>
+<p>5，usermod -g &lt;组名&gt; &lt;用户名&gt;：改变用户所在组</p>
+<p>6，usermod -d &lt;目录名&gt; &lt;用户名&gt;：改变用户登录的初始目录</p>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">[root@duo mydata]# ls -l<br>total 1900<br>drwxr-xr-x. 5 root root      41 Jul 13 12:40 mysql<br>drwxr-xr-x. 5 root root      42 Jul 13 12:38 nginx<br>-rw-r--r--. 1 ljd  ljd  1941868 Jul 13 11:25 pgyvpn.rpm<br>drwxr-xr-x. 5 root root      46 Jul 14 09:36 redis<br>drwxr-xr-x. 3 root root      21 Jul 20 16:03 tomcat<br></code></pre></td></tr></table></figure>
+
+<p>0~9位说明：</p>
+<p>第0位：确定文件类型（d:目录，-:普通文件，l:链接文件，c:字符设备，b:块文件）</p>
+<p>第1-3位：所有者权限（r:读权限，w:写权限，-:无权限，x:执行权限）</p>
+<p>第4-6位：所属组权限</p>
+<p>第7-9位：其他用户权限</p>
+<p>.后面数字：目录下文件数</p>
+<p>所有者</p>
+<p>所在组</p>
+<p>文件大小</p>
+<p>文件最后修改时间</p>
+<p><strong>修改权限</strong></p>
+<p>chmod：修改权限		chmod u&#x3D;rwx,g&#x3D;rx,o&#x3D;x 文件&#x2F;目录名</p>
+<p>（u:所有者，g:所在组，o:其他人，a:所有人）</p>
+<p>（使用+、-、&#x3D;变更权限）</p>
+<p>（还可以通过数字变更权限：r&#x3D;4，w&#x3D;2，x&#x3D;1）</p>
+<h3 id="任务调度"><a href="#任务调度" class="headerlink" title="任务调度"></a>任务调度</h3><p>1，crond：任务调度			-e:编辑，-l:显示，-r:删除</p>
+<h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><p><strong>分区的基础概念</strong></p>
+<p>1，mbr分区（最多四个主分区，最大支持2TB）</p>
+<p>2，gpt分区（支持无限多分区，但是可能被操作系统限制，最大支持18EB）</p>
+<p><strong>Linux分区介绍</strong></p>
+<p>无论多少个分区，都挂载在根目录。分区只是组成整个文件系统的一部分。</p>
+<p>Linux硬盘分为IDE硬盘和SCSI硬盘，目前基本都是SCSI硬盘。</p>
+<p>SCSI硬盘的标识符为“sdx<del>”，sd 表示分区所在设备类型，x表示盘号（a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属盘）</del>表示分区，1-4是主分区或扩展分区，从5开始时逻辑分区。</p>
+<p>lsblk		查看分区挂载情况</p>
+<p><strong>添加一块硬盘</strong></p>
+<p>1，虚拟机添加硬盘</p>
+<p>2，分区			fdisk &#x2F;dev&#x2F;sdb</p>
+<p>3，格式化		mkfs -t ext4 &#x2F;dev&#x2F;sdb1</p>
+<p>4，挂载目录	先创建一个目录，然后挂载 mount &#x2F;dev&#x2F;sdb1 &#x2F;newdisk</p>
+<p>5，设置自动挂载	</p>
+<p>vi &#x2F;etc&#x2F;fstab 按规则编辑配置文件，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">/dev/mapper/centos-root /                         xfs  defaults  0 0<br>UUID=58f6c38d-be8f-4787-b25d-2331aac9843a  /boot  xfs  defaults  0 0<br>/dev/mapper/centos-swap swap                      swap  defaults  0 0<br>/dev/sdb1  /mydata/newdisk                        ext4  defaults  0 0<br></code></pre></td></tr></table></figure>
+
+<p> mount -a 生效</p>
+<p><strong>磁盘情况查询</strong></p>
+<p>df -h ：查询整个系统磁盘使用情况</p>
+<p>du -h &lt;目录&gt;：查询指定目录磁盘占用情况			–max-depth&#x3D;2 子目录深度</p>
+<h3 id="Centos调整分区存储大小"><a href="#Centos调整分区存储大小" class="headerlink" title="Centos调整分区存储大小"></a>Centos调整分区存储大小</h3><p>例如：将&#x2F;home下150G 转移到&#x2F; 目录下</p>
+<p>fdisk -l</p>
+<p>查看待挂载硬盘</p>
+<p>&#x2F;dev&#x2F;sda 274.9 GB<br>查看物理卷<br>&#x2F;dev&#x2F;mapper&#x2F;centos-root 53.7 GB<br>&#x2F;dev&#x2F;mapper&#x2F;centos-home 212.1 GB</p>
+<p>1、查看分区大小：df -hl<br>2、备份home文件：tar cvf &#x2F;run&#x2F;home.tar &#x2F;home<br>3、终止home文件进程（切换到非home路径下执行这个命令）：fuser -km &#x2F;home<br>4、卸载home：umount &#x2F;home<br>5、删除home所在逻辑卷：lvremove &#x2F;dev&#x2F;mapper&#x2F;centos-home<br>6、扩大根目录所在的逻辑卷：lvextend -L +150G &#x2F;dev&#x2F;mapper&#x2F;centos-root<br>7、同步文件：xfs_growfs &#x2F;dev&#x2F;mapper&#x2F;centos-root<br>8、重建&#x2F;home文件系统所需要的逻辑卷：lvcreate -L 44G -n &#x2F;dev&#x2F;mapper&#x2F;centos-home<br>9、创建文件系统：mkfs.xfs &#x2F;dev&#x2F;mapper&#x2F;centos-home<br>10、挂载&#x2F;home文件系统：mount &#x2F;dev&#x2F;mapper&#x2F;centos-home<br>11、恢复&#x2F;home目录的内容：tar xvf &#x2F;run&#x2F;home.tar -C &#x2F;<br>12、删除&#x2F;run下面的备份home文件：rm -rf &#x2F;run&#x2F;home.tar</p>
+<h3 id="Linux虚拟机增加磁盘大小后如何扩展现有目录空间"><a href="#Linux虚拟机增加磁盘大小后如何扩展现有目录空间" class="headerlink" title="Linux虚拟机增加磁盘大小后如何扩展现有目录空间"></a>Linux虚拟机增加磁盘大小后如何扩展现有目录空间</h3><p>例如：lsblk 查看磁盘情况，如何把 sda 中剩余空间 增加到&#x2F;home文件夹？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">sda                                        8:0    0   500G  0 disk  <br>├─sda1                                     8:1    0   500M  0 part /boot <br>└─sda2                                     8:2    0 255.5G  0 part  <br>  ├─centos-root                            253:0    0    50G  0 lvm  / <br>  ├─centos-swap                            253:1    0   7.9G  0 lvm  [SWAP] <br>  └─centos-home                            253:2    0 197.6G  0 lvm  /home <br></code></pre></td></tr></table></figure>
+
+<p>步骤1，你可以使用分区管理工具如fdisk或parted来创建新的分区。我将展示如何使用fdisk命令创建新的分区：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">fdisk /dev/sda<br># 现在你将看到sda的分区表信息。输入 n 来创建一个新分区。<br># 选择分区类型。如果你只需将剩余空间用于LVM，你可以选择 p 来创建一个主分区。<br># 确定新分区的起始扇区和大小。如果你只需使用默认值以使用整个未分配空间，可以连续按 Enter 键。<br># 输入 w 来保存并退出。<br></code></pre></td></tr></table></figure>
+
+<p>步骤2，**将新的分区标记为物理卷(PV)**：使用<code>pvcreate</code>命令将新创建的分区标记为物理卷。</p>
+<p>(如果提示Device &#x2F;dev&#x2F;sda3 not found.，是因为系统没有识别到新的分区，需要<code>partprobe</code>重新加载一下。 )</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">pvcreate /dev/sda3<br></code></pre></td></tr></table></figure>
+
+<p>步骤3，**将新的物理卷添加到卷组(VG)**：使用<code>vgextend</code>命令将新创建的物理卷添加到现有的卷组中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">vgextend centos /dev/sda3<br></code></pre></td></tr></table></figure>
+
+<p>步骤4，**扩展逻辑卷(LV)**：使用<code>lvextend</code>命令将&#x2F;home逻辑卷扩展到新的物理卷上。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">lvextend -L +194G /dev/mapper/centos-home<br></code></pre></td></tr></table></figure>
+
+<p>步骤5，<strong>重新调整文件系统大小</strong>：根据文件系统类型使用适当的工具调整文件系统大小。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">xfs_growfs /dev/mapper/centos-home<br></code></pre></td></tr></table></figure>
+
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><p>修改配置文件指定固定IP地址，centos7的网络IP地址配置文件在 &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts 文件夹下，ens33网卡对应的配置文件为ifcfg-ens33</p>
+<p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">TYPE=&quot;Ethernet&quot;<br>PROXY_METHOD=&quot;none&quot;<br>BROWSER_ONLY=&quot;no&quot;<br>BOOTPROTO=&quot;static&quot;							# 使用静态IP地址，默认为dhcp<br>DEFROUTE=&quot;yes&quot;<br>IPV4_FAILURE_FATAL=&quot;no&quot;<br>IPV6INIT=&quot;yes&quot;<br>IPV6_AUTOCONF=&quot;yes&quot;<br>IPV6_DEFROUTE=&quot;yes&quot;<br>IPV6_FAILURE_FATAL=&quot;no&quot;<br>IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;<br>NAME=&quot;ens33&quot;<br>UUID=&quot;223fbfe1-8732-4032-9cc5-c030dd70b250&quot;<br>DEVICE=&quot;ens33&quot;<br>ONBOOT=&quot;yes&quot;								#是否开机启用<br>IPADDR=&quot;192.168.0.58&quot;						# 设置的静态IP地址<br>NETMASK=&quot;255.255.255.0&quot;						# 子网掩码<br>GATEWAY=&quot;192.168.0.1&quot;						# 网关地址<br>DNS1=&quot;119.29.29.29&quot;							# DNS服务器<br></code></pre></td></tr></table></figure>
+
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>1，ps：查看目前系统中哪些正在执行，正在执行的情况</p>
+<p>ps -a：显示当前终端的所有进程信息</p>
+<p>ps -u：以用户的格式显示进程信息</p>
+<p>ps -x：显示后台进程运行的参数</p>
+<p>2，kill：终止进程</p>
+<p>kill &lt;选项&gt; &lt;进程号&gt; ：通过进程号杀死进程。</p>
+<p>-9：强制终止</p>
+<p>killall &lt;进程名称&gt;：通过进程名称杀死进程，支持通配符。</p>
+<p>3，pstree：查看进程树			-p 显示进程PID	-u显示进程所属用户</p>
+<h3 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a>服务管理</h3><blockquote>
+<p>服务（service）本质就是线程，但是运行在后台，通常会监听某一端口，等待其他程序请求</p>
+</blockquote>
+<p>systemctl &lt;服务名&gt;  [start|stop|restart|reload|status]  ：操作某一服务</p>
+<p>systemctl enable &lt;服务名&gt;：设置服务开机启动</p>
+<h3 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h3><p>top：监控进程，默认3秒刷新一次</p>
+<p>netstat -anp：监控网络</p>
+<h3 id="RPM和YUM"><a href="#RPM和YUM" class="headerlink" title="RPM和YUM"></a>RPM和YUM</h3><blockquote>
+<p>RPM（Red-Hat Package Manager）</p>
+</blockquote>
+<p>rpm -qa | grep &lt;软件包名称&gt;：查询软件包是否安装</p>
+<p>rpm -qi &lt;软件包名称&gt;：查询软件安装详情</p>
+<p>rpm -ql &lt;软件包名称&gt;：查询软件包中的文件所在位置</p>
+<p>rpm -qf &lt;文件名&gt;：查询文件属于哪个软件包</p>
+<p>rpm -e &lt;软件包名称&gt;：卸载软件包</p>
+<p>rpm -ivh &lt;软件包全路径名称&gt;：安装软件包	install 安装	verbose 提示	hash 进度条</p>
+<blockquote>
+<p>Yum是一个shell前端的软件包管理器。能够从指定远程服务器自动下载包rpm包并安装，并且一次性安装所有依赖。</p>
+</blockquote>
+<p>yum list | grep &lt;软件名&gt;：查询yum服务器上有没有这个软件</p>
+<p>yum install &lt;软件名&gt;：安装软件，默认安装最新版本</p>
+<h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3><blockquote>
+<p>shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用shell来启动、挂起、停止甚至编写一些程序。</p>
+</blockquote>
+<p>快速入门：</p>
+<p>1，脚本以#!&#x2F;bin&#x2F;bash开头</p>
+<p>2，脚本需要有执行x权限</p>
+<p>3，无执行权限 可以通过 sh &lt;脚本文件&gt;，来执行。</p>
+<h2 id="四、Docker"><a href="#四、Docker" class="headerlink" title="四、Docker"></a>四、Docker</h2><p>开发者学运维，基本都是项目部署驱动学习方向，所以，学Docker是目标，Linux是前置技术，边学边掌握。虽然Windows上也可以用Docker，但是还是跟随主流吧。</p>
+<p>1，安装Docker，官网已经很详细了。按照步骤执行对应指令即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs shel">yum install -y yum-utils<br><br>yum-config-manager \<br>    --add-repo \<br>    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>#这里已经 替换为阿里云的镜像地址<br><br>yum makecache fast<br>	<br>yum install docker-ce docker-ce-cli containerd.io<br></code></pre></td></tr></table></figure>
+
+<p>2，配置阿里云容器镜像加速</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs she">sudo mkdir -p /etc/docker<br>sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;<br>&#123;<br>  &quot;registry-mirrors&quot;: [&quot;https://z5mv7pwy.mirror.aliyuncs.com&quot;],<br>  &quot;bip&quot;: &quot;192.168.200.1/24&quot;<br>&#125;<br>EOF<br>sudo systemctl daemon-reload<br>sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+
+<p>这里是按照阿里云服务器的容器镜像加速配置进行配置，由于我用的自建Linux系统，配置后是否有加速效果，还未考证。</p>
+<h4 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h4><h6 id="1，宿主机无法访问容器里的服务"><a href="#1，宿主机无法访问容器里的服务" class="headerlink" title="1，宿主机无法访问容器里的服务"></a>1，宿主机无法访问容器里的服务</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://127.0.0.1<br>报错curl: (56) Recv failure: Connection reset by peer<br></code></pre></td></tr></table></figure>
+
+<p>原因：docker网卡地址冲突   (其中： brctl命令需要安装： yum install -y bridge-utils)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo service docker stop<br>sudo ip link set dev docker0 down            %关闭docker虚拟网卡<br>sudo brctl delbr docker0					<br>sudo iptables -t nat -F POSTROUTING<br>sudo brctl addbr docker0<br>sudo ip addr add 192.168.200.1/24 dev docker0<br>sudo ip link set dev docker0 up 				%开启docker虚拟网卡<br>vi /etc/docker/daemon.json<br><span class="hljs-meta prompt_">		#</span><span class="language-bash">daemon.json</span><br>			&#123;&quot;registry-mirrors&quot;: [&quot;http://224ac393.m.daocloud.io&quot;],<br>    			&quot;bip&quot;: &quot;192.168.200.1/24&quot;<br>			&#125;<br><br>systemctl  restart  docker<br></code></pre></td></tr></table></figure>
+
+<h6 id="2，宿主机映射docker容器端口后，宿主机防火墙未开放该端口，外网仍然可以访问。"><a href="#2，宿主机映射docker容器端口后，宿主机防火墙未开放该端口，外网仍然可以访问。" class="headerlink" title="2，宿主机映射docker容器端口后，宿主机防火墙未开放该端口，外网仍然可以访问。"></a>2，宿主机映射docker容器端口后，宿主机防火墙未开放该端口，外网仍然可以访问。</h6><p>linux  有两种防火墙：iptables    和   firewall，一般用宝塔或者下面命令都是在firewall中开启对应端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --add-port=8080/tcp --permanent<br>firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+
+<p>原因：docker run新容器的时候 在iptables 新建规则，将容器映射端口开放给0.0.0.0&#x2F;0  （所有）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://gitee.com/duo-ge/duo-ge/raw/pic/%E5%9B%BE%E7%89%87%E5%BA%93/iptables.jpg"> </p>
+<p>如果想要关闭公网访问 需要手动 删除规则</p>
+<p>iptables -D DOCKER 2</p>
+<p>iptables -D DOCKER 3</p>
+<p>3,学习常用的Docker命令</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://gitee.com/duo-ge/duo-ge/raw/pic/%E5%9B%BE%E7%89%87%E5%BA%93/Docker%E5%91%BD%E4%BB%A4%E5%9B%BE%E8%B0%B1.jpg"></p>
+<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">docker run -d -p 8088:9000 \<br>--restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=true portainer/portainer<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="容器的数据卷使用——MySQL同步数据"><a href="#容器的数据卷使用——MySQL同步数据" class="headerlink" title="容器的数据卷使用——MySQL同步数据"></a>容器的数据卷使用——MySQL同步数据</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="Dockerfile-和-docker-compose-yml的区别"><a href="#Dockerfile-和-docker-compose-yml的区别" class="headerlink" title="Dockerfile 和 docker-compose.yml的区别"></a>Dockerfile 和 docker-compose.yml的区别</h4><blockquote>
+<p>Dockerfile 是拿来构建自定义镜像的，并没有直接生成容器。</p>
+<p>docker-compose.yml 文件是做容器编排以部署环境，里面包含使用各种镜像创建的容器服务，使用的镜像可以是网络上的，也可以是根据使用Dockerfile文件来生成的镜像。</p>
+</blockquote>
+<h5 id="Dockerfile（脚本）"><a href="#Dockerfile（脚本）" class="headerlink" title="Dockerfile（脚本）"></a>Dockerfile（脚本）</h5><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/U_OcNMpLAJJum_s9jbZLGg">使用Dockerfile为SpringBoot项目构建docker镜像</a></p>
+<p>Dockerfile 部分指令：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><code class="hljs dockerfile">// <span class="hljs-keyword">FROM</span> 指定基础镜像<br><span class="hljs-keyword">FROM</span> nginx<br><br>// <span class="hljs-keyword">RUN</span><span class="language-bash"> 执行命令。每一条 RUN 都会生成一层，一个需求尽量使用&amp;&amp;，这样就减少了 RUN ，即减少了分层</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;&lt;h1&gt;Hello, Docker!&lt;/h1&gt;&#x27;</span> &gt; /usr/share/nginx/html/index.html</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> yum update &amp;&amp; yum install -y vim python-dev</span><br><br>// <span class="hljs-keyword">COPY</span><span class="language-bash">: 源路径下的 package.json 复制到新一层的镜像路径/usr/src/app</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json /usr/src/app/</span><br><br>// <span class="hljs-keyword">WORKDIR</span><span class="language-bash"> 指定工作目录。指定下层工作的目录为容器内的/data,尽量使用绝对目录</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /data</span><br><br>// <span class="hljs-keyword">ADD</span><span class="language-bash"> 添加，ADD能自动解压文件。以下例子最终 hello 在/data/test 下</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /data</span><br><span class="hljs-keyword">ADD</span><span class="language-bash"> hello <span class="hljs-built_in">test</span>/ </span><br><br>// <span class="hljs-keyword">COPY</span><span class="language-bash"> 拷贝  与ADD类似，只是不能解压缩文件。</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /DATA</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> hello <span class="hljs-built_in">test</span>/</span><br><br>// <span class="hljs-keyword">CMD</span><span class="language-bash"> 执行命令</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;app.py&quot;</span>]</span><br><br>// <span class="hljs-keyword">ENV</span> 设置环境变量 定义 NAME=Happy Feet,那么之后就可以使用 $NAME 来执行了 <br><span class="hljs-keyword">ENV</span> VERSION=<span class="hljs-number">1.0</span> DEBUG=on NAME=<span class="hljs-string">&quot;Happy Feet&quot;</span> // VOLUMES挂载<br><br>// <span class="hljs-keyword">EXPOSE</span> 端口暴露 <br><span class="hljs-keyword">EXPOSE</span> &lt;端口<span class="hljs-number">1</span>&gt; [&lt;端口<span class="hljs-number">2</span>&gt;...]<br></code></pre></td></tr></table></figure>
+
+<h5 id="Docker-compose"><a href="#Docker-compose" class="headerlink" title="Docker compose"></a>Docker compose</h5><blockquote>
+<p>docker-compose 是官方开源项目，负责实现对 Docker 容器集群的快速编排，部署分布式应用。通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）</p>
+</blockquote>
+<p>下载Docker Compose</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
+
+<p>修改该文件的权限为可执行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">chmod +x /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">docker-compose version			%查看是否成功<br></code></pre></td></tr></table></figure>
+
+<p>一般使用步骤</p>
+<p>1、创建一个空目录。<br>2、定义 Dockerfile，方便迁移到任何地方<br>3、编写 docker-compose.yml 文件<br>4、运行 docker-compose up 启动服务、docker-compose down 关闭服务</p>
+<p>编写docker-compose.yml文件</p>
+<blockquote>
+<p>Docker Compose将所管理的容器分为三层，工程、服务及容器。docker-compose.yml中定义所有服务组成了一个工程，services节点下即为服务，服务之下为容器。容器与容器直之间可以以服务名称为域名进行访问，比如在mall-tiny-docker-compose服务中可以通过jdbc:mysql:&#x2F;&#x2F;db:3306这个地址来访问db这个mysql服务。</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span><br><span class="hljs-attr">services:</span><br>    <span class="hljs-comment"># 指定服务名称</span><br>    <span class="hljs-attr">db:</span><br>        <span class="hljs-comment"># 指定服务使用的镜像</span><br>        <span class="hljs-attr">image:</span> <span class="hljs-string">mysql:5.7</span><br>        <span class="hljs-comment"># 指定容器名称</span><br>        <span class="hljs-attr">container_name:</span> <span class="hljs-string">mysql</span><br>        <span class="hljs-comment"># 指定服务运行的端口</span><br>        <span class="hljs-attr">ports:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-number">3306</span><span class="hljs-string">:3306</span><br>        <span class="hljs-comment"># 指定容器中需要挂载的文件</span><br>        <span class="hljs-attr">volumes:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">/mydata/mysql/log:/var/log/mysql</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">/mydata/mysql/data:/var/lib/mysql</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">/mydata/mysql/conf:/etc/mysql</span><br>        <span class="hljs-comment"># 指定容器的环境变量</span><br>        <span class="hljs-attr">environment:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">MYSQL_ROOT_PASSWORD=root</span><br>    <span class="hljs-comment"># 指定服务名称</span><br>    <span class="hljs-attr">mall-tiny-docker-compose:</span><br>        <span class="hljs-comment"># 指定服务使用的镜像</span><br>        <span class="hljs-attr">image:</span> <span class="hljs-string">mall-tiny/mall-tiny-docker-compose:0.0.1-SNAPSHOT</span><br>        <span class="hljs-comment"># 指定容器名称</span><br>        <span class="hljs-attr">container_name:</span> <span class="hljs-string">mall-tiny-docker-compose</span><br>        <span class="hljs-comment"># 指定服务运行的端口</span><br>        <span class="hljs-attr">ports:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-number">8080</span><span class="hljs-string">:8080</span><br>        <span class="hljs-comment"># 指定容器中需要挂载的文件</span><br>        <span class="hljs-attr">volumes:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">/etc/localtime:/etc/localtime</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-string">/mydata/app/mall-tiny-docker-compose/logs:/var/logs</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Docker问题排查"><a href="#Docker问题排查" class="headerlink" title="Docker问题排查:"></a>Docker问题排查:</h2><p>问题发现:<br>发版时构建失败(不稳定),<br>问题分析:<br>构建编译打包阶段命令执行成功,目标服务器build命令或run命令出问题.<br>目标服务器中直接执行命令,报磁盘空间不足, 具体分析发现docker目录下磁盘占用非常大</p>
+<p>分析磁盘占用参考命令:</p>
+<p>1.查看大文件命令：find . -size +500M （只适合当前目录）<br>​<br>2.du -sh : 查看当前目录总共占的容量。不单独列出各子项占用的容量<br>​<br>3.df -h：查看整体磁盘使用情况、<br>​<br>4.du -lh –max-depth&#x3D;1 : 查看当前目录下一级子文件和子目录占用的磁盘容量。<br>​<br>5.find &#x2F; -type f -size +100M -print0 | xargs -0 du -h | sort -nr  查找”&#x2F;“目录下所有大于100M的所有文件</p>
+<p>有效信息如下: 通过查看,主要是 docker目录下vfs文件夹很大</p>
+<p>[root@localhost ~]# cd &#x2F;home&#x2F;docker<br>[root@localhost docker]# du -lh –max-depth&#x3D;1<br>104M    .&#x2F;containers<br>0       .&#x2F;plugins<br>198G    .&#x2F;vfs<br>12M     .&#x2F;image<br>24K     .&#x2F;volumes<br>96K     .&#x2F;network<br>0       .&#x2F;swarm<br>7.6M    .&#x2F;buildkit<br>0       .&#x2F;tmp<br>0       .&#x2F;runtimes<br>199G    .<br>​</p>
+<p>思考过程, 多台相同配置, 环境类似的服务器, 仅这一个有次问题, 要对比一下docker配置差异.</p>
+<p>对比 docker info发现差异<br>Storage Driver: devicemapper<br>Storage Driver: vfs</p>
+<p>Storage Driver 不同, 并且 Storage Driver配置为 vfs, 此文件夹会随着时间很快被占用.</p>
+<p>临时解决方案如下:</p>
+<p>docker system prune -a    清理 docker 容器</p>
+<p>暂定方案:</p>
+<p>编辑daemon.json追加配置修改storage-driver<br>vi &#x2F;etc&#x2F;docker&#x2F;daemon.json  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&#123;<br>  &quot;registry-mirrors&quot;: [&quot;https://mirror.ccs.tencentyun.com&quot;,&quot;http://hub-mirror.c.163.com&quot;,&quot;https://docker.mirrors.ustc.edu.cn&quot;],<br> &quot;storage-driver&quot;:&quot;devicemapper&quot;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>扩展:</p>
+<p>1,docker安装方式相同, 并且在&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;docker.service和 &#x2F;etc&#x2F;docker&#x2F;daemon.json 都没有发现相关额外配置,为啥Storage Driver的默认配置会不同? 是与版本差异么?</p>
+<p>一个是23.0.1 一个是 20.10.17</p>
+<p>2,Storage Driver的vfs模式, 明细感觉对磁盘的利用方式不一样,有何优势?</p>
+<blockquote>
+<p>2.1 Docker Storage Driver的devicemapper和vfs模式是两种不同的存储驱动程序，它们各自具有一些优势和特点。<br>Devicemapper是一种高级存储管理器，它使用了Linux内核提供的设备映射技术。它的优势在于支持高级的存储功能，如快照和克隆。Devicemapper还可以使用不同的存储池来管理容器的镜像和数据，提供了更好的隔离性和可管理性。然而，使用Devicemapper可能需要更多的配置和管理工作，并且在处理大量写入操作时可能会出现性能瓶颈。<br>VFS（Virtual File System）是Docker的默认存储驱动程序，它直接使用主机操作系统的文件系统来管理容器的镜像和数据。VFS的优势在于简单易用，无需额外的配置和管理。它适用于开发和测试环境，但在生产环境中可能会遇到性能和可扩展性方面的限制。 综上所述，Devicemapper适用于需要高级存储功能和更好隔离性的场景，但需要更多的配置和管理。而VFS适用于简单的开发和测试环境。选择哪种存储驱动程序取决于您的具体需求和环境。</p>
+<p>2.2 在多次构建镜像后，Devicemapper对主机磁盘的占用较少，而VFS占用较多的原因是它们的存储机制不同。<br>Devicemapper使用了写时复制（Copy-on-Write）的机制。当使用Devicemapper构建镜像时，它会创建一个基础镜像和一个写入层。每次构建镜像时，只有更改的部分会被写入到写入层，而不会对基础镜像进行修改。这样可以节省磁盘空间，因为多个镜像可以共享相同的基础层。因此，Devicemapper对主机磁盘的占用相对较少。 相反，VFS直接使用主机操作系统的文件系统来管理镜像和数据。每次构建镜像时，VFS会在主机文件系统上创建一个完整的镜像副本，包括所有的更改和文件。这导致每个构建都会占用更多的磁盘空间，因为每个镜像都是完整的副本。 因此，如果您需要在多次构建镜像后节省磁盘空间，Devicemapper可能是更好的选择。但请注意，Devicemapper可能需要更多的配置和管理工作，并且在处理大量写入操作时可能会出现性能瓶颈</p>
+</blockquote>
+<p>3,网上有主动指定vfs模式的配置教程,相关参数具体作用是什么?</p>
+<p>{<br>  “storage-driver”: “vfs”,<br>  “storage-opts”: [“size&#x3D;256M”]<br>}</p>
+<hr>
+<p>2024年8月6日14:00:00<br>Linux虚拟机 yum update报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">Loading mirror speeds from cached hostfile<br>Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;arch=x86_64&amp;repo=os&amp;infra=stock error was<br>14: curl#6 - &quot;Could not resolve host: mirrorlist.centos.org; 未知的错误&quot;<br><br><br> One of the configured repositories failed (未知),<br> and yum doesn&#x27;t have enough cached data to continue. At this point the only<br> safe thing yum can do is fail. There are a few ways to work &quot;fix&quot; this:<br><br>     1. Contact the upstream for the repository and get them to fix the problem.<br><br>     2. Reconfigure the baseurl/etc. for the repository, to point to a working<br>        upstream. This is most often useful if you are using a newer<br>        distribution release than is supported by the repository (and the<br>        packages for the previous distribution release still work).<br><br>     3. Run the command with the repository temporarily disabled<br>            yum --disablerepo=&lt;repoid&gt; ...<br><br>     4. Disable the repository permanently, so yum won&#x27;t use it by default. Yum<br>        will then just ignore the repository until you permanently enable it<br>        again or use --enablerepo for temporary usage:<br><br>            yum-config-manager --disable &lt;repoid&gt;<br>        or<br>            subscription-manager repos --disable=&lt;repoid&gt;<br><br>     5. Configure the failing repository to be skipped, if it is unavailable.<br>        Note that yum will try to contact the repo. when it runs most commands,<br>        so will have to try and fail each time (and thus. yum will be be much<br>        slower). If it is a very temporary problem though, this is often a nice<br>        compromise:<br><br>            yum-config-manager --save --setopt=&lt;repoid&gt;.skip_if_unavailable=true<br><br>Cannot find a valid baseurl for repo: base/7/x86_64<br><br></code></pre></td></tr></table></figure>
+
+<p>经过排查，虚拟机可访问外网，但还是是用不了yum命令，说明是yum镜像没有了，那么就得下载一个来更新。<br>在安装完CentOS后一般需要修改yum源，才能够在安装更新rpm包时获得比较理想的速度。国内比较快的有阿里源、163源。这里以阿里源为例子。</p>
+<ol>
+<li>cd &#x2F;etc&#x2F;yum.repos.d</li>
+<li>mv CentOS-Base.repo CentOS-Base.repo.backup</li>
+<li>wget <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/repo/Centos-7.repo">https://mirrors.aliyun.com/repo/Centos-7.repo</a></li>
+<li>mv Centos-7.repo CentOS-Base.repo</li>
+<li>yum clean all</li>
+</ol>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2017/03/04/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02017%E5%B9%B43%E6%9C%8814%E6%97%A5/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">随记2017年3月14日</div></div></a></div><div class="next-post pull-right"><a href="/2019/02/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02019%E5%B9%B42%E6%9C%88%E6%9F%90%E6%97%A5/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">褪去了职场新手光环的我，该何去何从？</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2021/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/Mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E6%90%AD%E5%BB%BA/" title="Mysql主从复制搭建"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-01-01</div><div class="title">Mysql主从复制搭建</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/goutou_118.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/c759b504ebfdf.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.35;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);"> 试着<b style="color:#fff">学</b>；<br> 试着<b style="color:#fff">说</b>；<br> 试着<b style="color:#fff">写</b>；<br> 试着<b style="color:#fff">做</b>；<br> 试着,<b style="color:#fff">知行合一</b>；<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/dogs_run.gif"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">踱鸽&amp;水晶蟹</h1><div class="author-info__desc">咸鱼偶尔也得翻个身</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/duo-ge" target="_blank" title="Github"><i class="fa-brands fa-square-github faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:1070800500@qq.com" target="_blank" title="Email"><i class="fa-solid fa-envelope faa-tada"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85CentOS7"><span class="toc-number">1.1.</span> <span class="toc-text">一、安装CentOS7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.</span> <span class="toc-text">二、配置连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Linux"><span class="toc-number">1.3.</span> <span class="toc-text">三、Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%93%8D%E7%AF%87"><span class="toc-number">1.3.1.</span> <span class="toc-text">实操篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">vi和vim编辑器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">Linux常用命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">组管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.3.</span> <span class="toc-text">权限管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">1.3.4.</span> <span class="toc-text">任务调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.3.5.</span> <span class="toc-text">磁盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos%E8%B0%83%E6%95%B4%E5%88%86%E5%8C%BA%E5%AD%98%E5%82%A8%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.3.6.</span> <span class="toc-text">Centos调整分区存储大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F%E5%90%8E%E5%A6%82%E4%BD%95%E6%89%A9%E5%B1%95%E7%8E%B0%E6%9C%89%E7%9B%AE%E5%BD%95%E7%A9%BA%E9%97%B4"><span class="toc-number">1.3.7.</span> <span class="toc-text">Linux虚拟机增加磁盘大小后如何扩展现有目录空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.8.</span> <span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.9.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.10.</span> <span class="toc-text">服务管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7"><span class="toc-number">1.3.11.</span> <span class="toc-text">监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E5%92%8CYUM"><span class="toc-number">1.3.12.</span> <span class="toc-text">RPM和YUM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell%E7%BC%96%E7%A8%8B"><span class="toc-number">1.3.13.</span> <span class="toc-text">Shell编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Docker"><span class="toc-number">1.4.</span> <span class="toc-text">四、Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1%EF%BC%8C%E5%AE%BF%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E9%87%8C%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.4.0.1.0.1.</span> <span class="toc-text">1，宿主机无法访问容器里的服务</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2%EF%BC%8C%E5%AE%BF%E4%B8%BB%E6%9C%BA%E6%98%A0%E5%B0%84docker%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%90%8E%EF%BC%8C%E5%AE%BF%E4%B8%BB%E6%9C%BA%E9%98%B2%E7%81%AB%E5%A2%99%E6%9C%AA%E5%BC%80%E6%94%BE%E8%AF%A5%E7%AB%AF%E5%8F%A3%EF%BC%8C%E5%A4%96%E7%BD%91%E4%BB%8D%E7%84%B6%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E3%80%82"><span class="toc-number">1.4.0.1.0.2.</span> <span class="toc-text">2，宿主机映射docker容器端口后，宿主机防火墙未开放该端口，外网仍然可以访问。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">可视化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8D%B7%E4%BD%BF%E7%94%A8%E2%80%94%E2%80%94MySQL%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">容器的数据卷使用——MySQL同步数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dockerfile-%E5%92%8C-docker-compose-yml%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">Dockerfile 和 docker-compose.yml的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Dockerfile%EF%BC%88%E8%84%9A%E6%9C%AC%EF%BC%89"><span class="toc-number">1.4.0.4.1.</span> <span class="toc-text">Dockerfile（脚本）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Docker-compose"><span class="toc-number">1.4.0.4.2.</span> <span class="toc-text">Docker compose</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5"><span class="toc-number">1.5.</span> <span class="toc-text">Docker问题排查:</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/09/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02024%E5%B9%B45%E6%9C%889%E6%97%A5/" title="没有那么不堪，不要妄自菲薄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="没有那么不堪，不要妄自菲薄"/></a><div class="content"><a class="title" href="/2024/05/09/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02024%E5%B9%B45%E6%9C%889%E6%97%A5/" title="没有那么不堪，不要妄自菲薄">没有那么不堪，不要妄自菲薄</a><time datetime="2024-05-08T23:00:00.000Z" title="发表于 2024-05-09 07:00:00">2024-05-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02022%E5%B9%B4%E6%9F%90%E6%9C%88/" title="知识付费"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="知识付费"/></a><div class="content"><a class="title" href="/2022/01/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02022%E5%B9%B4%E6%9F%90%E6%9C%88/" title="知识付费">知识付费</a><time datetime="2021-12-31T23:00:00.000Z" title="发表于 2022-01-01 07:00:00">2022-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Mysql%E5%B8%B8%E7%94%A8%E8%BF%90%E7%BB%B4%E7%BB%9F%E8%AE%A1%E8%AF%AD%E5%8F%A5/" title="Mysql常用运维统计语句"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mysql常用运维统计语句"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Mysql%E5%B8%B8%E7%94%A8%E8%BF%90%E7%BB%B4%E7%BB%9F%E8%AE%A1%E8%AF%AD%E5%8F%A5/" title="Mysql常用运维统计语句">Mysql常用运维统计语句</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%9B%BE%E7%A4%BA/" title="git基础命令图示"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git基础命令图示"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%9B%BE%E7%A4%BA/" title="git基础命令图示">git基础命令图示</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" title="年度计划"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="年度计划"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" title="年度计划">年度计划</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="踱鸽&amp;水晶蟹" target="_blank">踱鸽&amp;水晶蟹</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="苏ICP备2022018333号">苏ICP备2022018333号</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">程序员-踱鸽</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="博客站点"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="博客站点"/><span class="back-menu-item-text">博客站点</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://gitee.com/duo-ge" title="gitee"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="gitee"/><span class="back-menu-item-text">gitee</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">插画师-水晶蟹</div><div class="back-menu-list"><a class="back-menu-item" href="/album/" title="插画师图集"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="插画师图集"/><span class="back-menu-item-text">插画师图集</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://emotion.xiaokang.me/#/" title="表情包速查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="表情包速查"/><span class="back-menu-item-text">表情包速查</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fontawesome.com/icons" title="fontawesome6图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="fontawesome6图标"/><span class="back-menu-item-text">fontawesome6图标</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 全部</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 作品</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/projects/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 项目</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 图集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 分享</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 影视</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 书籍</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/web/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 梗言梗语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 冷暖自知</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Java/" style="font-size: 0.88rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>2</sup></a><a href="/tags/Mysql/" style="font-size: 0.88rem;">Mysql<sup>2</sup></a><a href="/tags/RabbitMQ/" style="font-size: 0.88rem;">RabbitMQ<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/redis/" style="font-size: 0.88rem;">redis<sup>1</sup></a><a href="/tags/seata/" style="font-size: 0.88rem;">seata<sup>1</sup></a><a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 0.88rem;">中间件<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 0.88rem;">代码<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">工具<sup>2</sup></a><a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 0.88rem;">标签<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=5010185739&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.onmicrosoft.cn/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://npm.onmicrosoft.cn/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://npm.onmicrosoft.cn/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.asteroidrocket.top/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+      imageUploader: true,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    anzhiyu.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline.css')
+      if (false) await getCSS('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline-meta.css')
+      const { init } = await import('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://waline.asteroidrocket.top/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="/js/custom.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.onmicrosoft.cn/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.onmicrosoft.cn/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.onmicrosoft.cn/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"]):not([href="/images/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

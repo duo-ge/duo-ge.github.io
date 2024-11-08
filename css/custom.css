@@ -1,0 +1,50 @@
+/* 隐藏首页banner右下角按钮 */
+/* .topGroup .banner-button-group {
+  display: none;
+} */
+/* 隐藏相册页banner右下角按钮 */
+.author-content-item .card-content .banner-button-group {
+  display: none;
+}
+
+/* 调整关于页面，追番组件宽度 */
+#about-page .author-content-item.comic-content {
+  width: 49%;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* 隐藏关于页面不需要的组件 */
+#about-page .author-content-item-group.column.mapAndInfo {
+  display: none;
+}
+#about-page .author-content-item.map {
+  display: none;
+}
+#about-page .author-content-item.selfInfo {
+  display: none;
+}
+#about-page .author-content-item.personalities {
+  display: none;
+}
+#about-page .author-content-item.myphoto {
+  display: none;
+}
+#about-page .author-content-item.maxim {
+  display: none;
+}
+#about-page .author-content-item.buff {
+  display: none;
+}
+#about-page .author-content-item.game-yuanshen {
+  display: none;
+}
+#about-page .author-content-item.careers {
+  display: none;
+}
+#about-page .author-content-item.like-technology {
+  display: none;
+}
+#about-page .author-content-item.like-music {
+  display: none;
+}

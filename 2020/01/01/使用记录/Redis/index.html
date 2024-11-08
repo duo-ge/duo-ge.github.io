@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>使用记录_Redis | 踱鸽&amp;水晶蟹</title><meta name="keywords" content="代码,redis"><meta name="author" content="踱鸽&amp;水晶蟹"><meta name="copyright" content="踱鸽&amp;水晶蟹"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="使用记录_Redis"><meta name="application-name" content="使用记录_Redis"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="使用记录_Redis"><meta property="og:url" content="https://hexo.asteroidrocket.top/2020/01/01/使用记录/Redis/index.html"><meta property="og:site_name" content="踱鸽&amp;水晶蟹"><meta property="og:description" content="使用记录_Redis"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://hexo.asteroidrocket.top/img/default_cover.jpg"><meta property="article:author" content="踱鸽&amp;水晶蟹"><meta property="article:tag" content="Duo"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://hexo.asteroidrocket.top/img/default_cover.jpg"><meta name="description" content="使用记录_Redis"><link rel="shortcut icon" href="/icon/gu.ico"><link rel="canonical" href="https://hexo.asteroidrocket.top/2020/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/Redis/"><link rel="preconnect" href="//npm.onmicrosoft.cn"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.onmicrosoft.cn/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"再来一瓶！","backTitle":"谢谢惠顾！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 踱鸽&水晶蟹","link":"链接: ","source":"来源: 踱鸽&水晶蟹","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.onmicrosoft.cn/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.onmicrosoft.cn/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '踱鸽&水晶蟹',
+  title: '使用记录_Redis',
+  postAI: '',
+  pageFillDescription: '初识Redis, 常用命令：, String 类型：, List类型, Set类型, Hash类型, Zset类型, 特殊数据类型, 持久化, 事务, 监控 Watch, 主从复制, 哨兵模式, Jedis, SpringBoot中使用Redis, Redis问题排查初识是用语言开发的一个高性能键值对数据库可用于数据缓存主要用于处理大量数据的高访问负载下载并安装安装在当前地址栏输入后执行的启动命令安装常用命令官网可以查看所有命令的说明和使用切换到号数据库默认配置个数据库查看所有的插入或更新一条数据获取该的删除数据清除该数据库数据清除全部数据判断这条数据是否存在目标数据库编号移动数据有效时间设置该条数据的有效时间查看该条数据的有效时间查看数据类型类型除了字符串还可以是数字计数器统计多单位数量在原有数据的追加如果不存在相当于数据值数据值步长数据值步长步长数据值步长设置过期时间不存在则设置常用在分布式锁同时设置多个值同时获取多个值事务操作要么同时成功要么同时失败先获取值再设置值类型在里可以把玩成栈队列阻塞队列将一个或者多个值插入头部将一个或者多个值插入尾部通过区间获取具体的值移除列表第一个元素移除列表第一个元素通过下标获取具体值获取列表长度数量移除指定的值通过下标截取更改组合命令移除列表数据添加到新的列表中下标更新指定下标的值或对应值不存在会报错原新在指定前或者后插入数据类型无序不重复集合插入数据查看集合中的元素获取集合中元素个数删除指定的值数量随机取出指定数量的值随机删除元素移动数据到新的中交集差集并集类型数据存值取值获取全部数据删除指定的值查看数量判断指定的数据是否存在查看中所有的查看中所有的类型有序集合添加一个值为排序取值排序取值按升序排序取值按降序删除值获取元素个数可应用于排行榜等需求特殊数据类型地理位置基数统计位图持久化数据快照全量备份持久化是指在指定的时间间隔内将内存中的数据集快照写入磁盘也是默认的持久化方式这种方式是就是将内存中数据以快照的方式写入到二进制文件中默认的文件名为默认如下配置表示秒内如果至少有个的值变化则保存表示秒内如果至少有个的值变化则保存表示秒内如果至少有个的值变化则保存一种更加高效的方式工作机制很简单会将每一个收到的写命令都通过函数追加到文件中通俗的理解就是日志记录三种触发机制每修改同步同步持久化每次发生数据变更会被立即记录到磁盘性能较差但数据完整性比较好每秒同步异步操作每秒记录如果一秒内宕机有数据丢失不同从不同步事务原子性一致性隔离性持久性事务本质一组命令的集合一个事务所有命令序列化按顺序执行一次性顺序性排他性执行一系列命令事务没有隔离级别的概念单条命令是保证原子性的但是事务不保证原子性的事务开启事务命令入队入队时命令不会执行执行事务按照队伍顺序执行命令取消事务事务队列中的命令都不会执行编译型异常代码有问题命令有错事务中的命令都不会执行运行时异常其他命令可以正常执行错误命令抛出异常监控悲观锁乐观锁可以当做的乐观锁操作主从复制查看当前服务信息更改配置并启动默认启动的服务都是主机开始配置在从机中配置主机主机命令行配置的主从配置从机重启服务后悔变为默认情况使自己变成主机哨兵模式是官方推荐的连接工具使用连接中间件使用对象进行操作与使用命令类似开启事务执行事务放弃事务中使用添加依赖依赖配置配置连接参数服务器地址数据库索引默认为服务器连接端口服务器连接密码默认为空连接池最大连接数使用负值表示没有限制连接池最大阻塞等待时间使用负值表示没有限制连接池中的最大空闲连接连接池中的最小空闲连接连接超时时间毫秒自行数据存储主要使用存储数据获取数据设置超期时间删除数据自增操作自增步长使用进行数据缓存缓存有多种可以在层实现也可以在层实现层实现缓存根据框架不同实现方式略有不同这里推荐层缓存缓存功能的实现是依靠下面的这几个注解完成的开启缓存功能定义公共设置位于之上定义缓存用于触发缓存定义更新缓存触发缓存更新定义清除缓存触发缓存清除组合定义多种缓存功能格式化日期类创建序列化器设置日期时间格式化将类名称序列化到串中设置输入时忽略字符串中存在而对象实际没有的属性使用做缓存器设置缓存有效期为天格式化储存数据自定义以格式进行缓存代码案例如上问题排查在中是使用做连接发现报错一种解决方案修改你的服务端配置修改前我们先查看配置查看当前连接数查看超时查看最大存活时间查看最大客户端数修改配置临时生效重启失效想持久有效可修改配置文件最大连接数超时时间秒最大存活时间秒',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-08 16:02:43',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/icon/goutou_118.gif"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/big-counter.css"/><script async="async" src="https://npm.onmicrosoft.cn/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">程序员-踱鸽</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="博客站点"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="博客站点"/><span class="back-menu-item-text">博客站点</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://gitee.com/duo-ge" title="gitee"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="gitee"/><span class="back-menu-item-text">gitee</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">插画师-水晶蟹</div><div class="back-menu-list"><a class="back-menu-item" href="/album/" title="插画师图集"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="插画师图集"/><span class="back-menu-item-text">插画师图集</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://emotion.xiaokang.me/#/" title="表情包速查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="表情包速查"/><span class="back-menu-item-text">表情包速查</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fontawesome.com/icons" title="fontawesome6图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="fontawesome6图标"/><span class="back-menu-item-text">fontawesome6图标</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">踱鸽&amp;水晶蟹</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 全部</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 作品</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/projects/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 项目</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 图集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 分享</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 影视</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 书籍</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/web/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 梗言梗语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 冷暖自知</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://bu.dusays.com/2021/01/15/f75bd8b801df7.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/f75bd8b801df7.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://bu.dusays.com/2021/01/15/35d39f00bead9.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/35d39f00bead9.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>2</sup></a><a href="/tags/Mysql/" style="font-size: 1.05rem;">Mysql<sup>2</sup></a><a href="/tags/RabbitMQ/" style="font-size: 1.05rem;">RabbitMQ<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/redis/" style="font-size: 1.05rem;">redis<sup>1</sup></a><a href="/tags/seata/" style="font-size: 1.05rem;">seata<sup>1</sup></a><a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 1.05rem;">中间件<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 1.05rem;">代码<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">工具<sup>2</sup></a><a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 1.05rem;">标签<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" itemprop="url">使用记录</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E4%BB%A3%E7%A0%81/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>代码</span></a><a class="article-meta__tags" href="/tags/redis/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>redis</span></a></span></div></div><h1 class="post-title" itemprop="name headline">使用记录_Redis</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2019-12-31T16:00:00.000Z" title="发表于 2020-01-01 00:00:00">2020-01-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-03-08T08:02:43.842Z" title="更新于 2024-03-08 16:02:43">2024-03-08</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://hexo.asteroidrocket.top/2020/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/Redis/"><header><a class="post-meta-categories" href="/categories/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" itemprop="url">使用记录</a><a href="/tags/%E4%BB%A3%E7%A0%81/" tabindex="-1" itemprop="url">代码</a><a href="/tags/redis/" tabindex="-1" itemprop="url">redis</a><h1 id="CrawlerTitle" itemprop="name headline">使用记录_Redis</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">踱鸽&amp;水晶蟹</span><time itemprop="dateCreated datePublished" datetime="2019-12-31T16:00:00.000Z" title="发表于 2020-01-01 00:00:00">2020-01-01</time><time itemprop="dateCreated datePublished" datetime="2024-03-08T08:02:43.842Z" title="更新于 2024-03-08 16:02:43">2024-03-08</time></header><h1 id="初识Redis"><a href="#初识Redis" class="headerlink" title="初识Redis"></a>初识Redis</h1><blockquote>
+<p>Redis是用C语言开发的一个高性能键值对数据库，可用于数据缓存，主要用于处理大量数据的高访问负载。</p>
+</blockquote>
+<p>1，下载并安装Redis</p>
+<p>​		windows安装：</p>
+<p>​			在当前地址栏输入cmd后，执行redis的启动命令：redis-server.exe redis.windows.conf</p>
+<p>​		Linux—docker安装：</p>
+<p>​			</p>
+<p>2，</p>
+<h1 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h1><blockquote>
+<p>官网可以查看所有命令的说明和使用</p>
+</blockquote>
+<p>select 0				&#x2F;&#x2F;切换到0号数据库（默认配置16个数据库，0~15）</p>
+<p>keys *					&#x2F;&#x2F;查看所有的key</p>
+<p>set ‘key’ ‘value’			&#x2F;&#x2F;插入或更新一条数据</p>
+<p>get ‘key’					&#x2F;&#x2F;获取该key的value</p>
+<p>del ‘key’					&#x2F;&#x2F;删除数据</p>
+<p>flushdb					&#x2F;&#x2F;清除该数据库数据</p>
+<p>flushall					&#x2F;&#x2F;清除全部数据</p>
+<p>exists ‘key’			&#x2F;&#x2F;判断这条数据是否存在</p>
+<p>move ‘key’ ‘目标数据库编号’		&#x2F;&#x2F;移动数据</p>
+<p>expire ‘key’ ‘有效时间’		&#x2F;&#x2F;设置该条数据的有效时间</p>
+<p>ttl ‘key’						&#x2F;&#x2F;查看该条数据的有效时间</p>
+<p>type ‘key’					&#x2F;&#x2F;查看数据类型</p>
+<h2 id="String-类型："><a href="#String-类型：" class="headerlink" title="String 类型："></a>String 类型：</h2><blockquote>
+<p>value除了字符串还可以是数字（计数器、统计多单位数量）</p>
+</blockquote>
+<p>append ‘key’ ‘value’		&#x2F;&#x2F;在原有数据的追加value，如果key不存在，相当于set</p>
+<p>incr ‘key’					&#x2F;&#x2F; 数据值 +1  </p>
+<p>decr ‘key’					&#x2F;&#x2F;数据值 -1</p>
+<p>incrby ‘key’ ‘步长’		&#x2F;&#x2F;数据值 +步长</p>
+<p>decrby ‘key’ ‘步长’		&#x2F;&#x2F;数据值 -步长</p>
+<p>setex                            &#x2F;&#x2F;set with expire   设置过期时间</p>
+<p>setnx							&#x2F;&#x2F;set if not exist	不存在则设置（常用在分布式锁）</p>
+<p>mset							&#x2F;&#x2F;同时设置多个值</p>
+<p>mget							&#x2F;&#x2F;同时获取多个值</p>
+<p>msetnx						&#x2F;&#x2F;事务操作，要么同时成功，要么同时失败</p>
+<p>getset							&#x2F;&#x2F;先获取值，再设置值</p>
+<hr>
+<h2 id="List类型"><a href="#List类型" class="headerlink" title="List类型"></a>List类型</h2><blockquote>
+<p>在Redis里，可以把list玩成：栈、队列、阻塞队列。</p>
+</blockquote>
+<p>lpush ‘key’ ‘value’					&#x2F;&#x2F;将一个或者多个值插入头部（left）</p>
+<p>rpush  ‘key’ ‘value’					&#x2F;&#x2F;将一个或者多个值插入尾部（right）</p>
+<p>lrange ‘key’ 0 1						&#x2F;&#x2F;通过区间获取具体的值</p>
+<p>lpop ‘key’								&#x2F;&#x2F;移除列表 left第一个元素</p>
+<p>rpop ‘key’								&#x2F;&#x2F;移除列表 right第一个元素</p>
+<p>lindex ‘key’ 1							&#x2F;&#x2F;通过下标获取具体值</p>
+<p>llen											&#x2F;&#x2F;获取列表长度</p>
+<p>lrem ‘key’ ‘数量’ ‘value’			&#x2F;&#x2F;移除指定的值</p>
+<p>ltrim ‘key’ 1 2							&#x2F;&#x2F;通过下标截取list（更改）</p>
+<p>rpoplpush								&#x2F;&#x2F;组合命令，移除列表数据，添加到新的列表中</p>
+<p>lset ‘key’ ‘下标’ ‘value’			&#x2F;&#x2F;更新指定下标的值（list或对应值 不存在会报错）</p>
+<p>linsert ‘key’ ‘before||after’ ‘原value’ ‘新value’		&#x2F;&#x2F;在指定value前或者后插入数据</p>
+<hr>
+<h2 id="Set类型"><a href="#Set类型" class="headerlink" title="Set类型"></a>Set类型</h2><blockquote>
+<p>（无序不重复集合）</p>
+</blockquote>
+<p>sadd ‘key’ ‘value’				&#x2F;&#x2F;插入数据</p>
+<p>smenbers ‘key’					&#x2F;&#x2F;查看集合中的元素</p>
+<p>scard ‘key’							&#x2F;&#x2F;获取set集合中元素个数</p>
+<p>srem ‘key’ ‘value’				&#x2F;&#x2F;删除指定的值</p>
+<p>srandmember ‘key’ ‘数量’	&#x2F;&#x2F;随机取出指定数量的值</p>
+<p>spop ‘key’							&#x2F;&#x2F;随机删除元素</p>
+<p>smove ‘key’ ‘newKey’ ‘value’		&#x2F;&#x2F;移动数据到新的key中</p>
+<p>sinter ‘key1’ ‘key2’				&#x2F;&#x2F;交集</p>
+<p>sdiff ‘key1’ ‘key2’				&#x2F;&#x2F;差集</p>
+<p>sunion ‘key1’ ‘key2’			&#x2F;&#x2F;并集</p>
+<hr>
+<h2 id="Hash类型"><a href="#Hash类型" class="headerlink" title="Hash类型"></a>Hash类型</h2><blockquote>
+<p>(key-Map 数据)</p>
+</blockquote>
+<p>hset ‘key’ ‘field’ ‘value’				&#x2F;&#x2F;存值</p>
+<p>hget ‘key’ ‘field’							&#x2F;&#x2F;取值</p>
+<p>hgetall ‘key’								&#x2F;&#x2F;获取全部数据</p>
+<p>hdel ‘key’ ‘field’							&#x2F;&#x2F;删除指定的值</p>
+<p>hlen ‘key’									&#x2F;&#x2F;查看数量</p>
+<p>hexists ‘key’ ‘field’					&#x2F;&#x2F;判断指定的数据是否存在</p>
+<p>hkeys ‘key’								&#x2F;&#x2F;查看map中所有的key</p>
+<p>hvals ‘key’								&#x2F;&#x2F;查看map中所有的value</p>
+<hr>
+<h2 id="Zset类型"><a href="#Zset类型" class="headerlink" title="Zset类型"></a>Zset类型</h2><blockquote>
+<p>（有序集合）</p>
+</blockquote>
+<p>zadd ‘key’ ‘score’ ‘value’				&#x2F;&#x2F;添加一个值 ，score为排序</p>
+<p>zrange ‘key’ 0 1								&#x2F;&#x2F;取值</p>
+<p>zrangebyscore ‘key’  -inf +inf 		&#x2F;&#x2F;排序取值(按score升序)</p>
+<p>zrevrangebyscore							&#x2F;&#x2F;排序取值(按score降序)</p>
+<p>zrem ‘key’ ‘value’							&#x2F;&#x2F;删除值</p>
+<p>zcard ‘key’										&#x2F;&#x2F;获取元素个数</p>
+<p>（可应用于排行榜等需求）</p>
+<h2 id="特殊数据类型"><a href="#特殊数据类型" class="headerlink" title="特殊数据类型"></a>特殊数据类型</h2><blockquote>
+<p>Geospatial地理位置</p>
+<p>Hyperloglog基数统计</p>
+<p>Bitmap 位图</p>
+</blockquote>
+<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><p><strong>RDB</strong></p>
+<p>数据快照、全量备份</p>
+<p>RDB持久化是指在指定的时间间隔内将内存中的数据集快照写入磁盘。也是默认的持久化方式，这种方式是就是将内存中数据以快照的方式写入到二进制文件中,默认的文件名为dump.rdb。</p>
+<p>默认如下配置：</p>
+<p>#表示900 秒内如果至少有 1 个 key 的值变化，则保存save 900 1#表示300 秒内如果至少有 10 个 key 的值变化，则保存save 300 10#表示60 秒内如果至少有 10000 个 key 的值变化，则保存save 60 10000</p>
+<p><strong>AOF</strong></p>
+<p>一种更加高效的方式AOF，工作机制很简单，redis会将每一个收到的写命令都通过write函数追加到文件中。通俗的理解就是日志记录。</p>
+<p><strong>三种触发机制</strong></p>
+<p>（1）每修改同步always：同步持久化 每次发生数据变更会被立即记录到磁盘 性能较差但数据完整性比较好</p>
+<p>（2）每秒同步everysec：异步操作，每秒记录 如果一秒内宕机，有数据丢失</p>
+<p>（3）不同no：从不同步</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>ACID：原子性、一致性、隔离性、持久性</p>
+<p>Redis事务本质：一组命令的集合！一个事务所有命令序列化，按顺序执行。</p>
+<p>一次性、顺序性、排他性，执行一系列命令。</p>
+<p>Redis事务没有隔离级别的概念。 </p>
+<p>Redis 单条命令是保证原子性的，但是事务不保证原子性。</p>
+<p>redis的事务：</p>
+<ul>
+<li><p>开启事务（multi）</p>
+</li>
+<li><p>命令入队（……）       &#x2F;&#x2F;入队时命令不会执行</p>
+</li>
+<li><p>执行事务（exec）      &#x2F;&#x2F;按照队伍顺序执行命令</p>
+</li>
+<li><p>取消事务（discard）    &#x2F;&#x2F;事务队列中的命令都不会执行</p>
+<blockquote>
+<p>编译型异常（代码有问题，命令有错），事务中的命令都不会执行</p>
+</blockquote>
+<blockquote>
+<p>运行时异常（1&#x2F;0），其他命令可以正常执行，错误命令抛出异常</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="监控-Watch"><a href="#监控-Watch" class="headerlink" title="监控 Watch"></a>监控 Watch</h2><p>​		悲观锁</p>
+<p>​		乐观锁</p>
+<p>watch 可以当做Redis的乐观锁操作</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\Duo\AppData\Roaming\Typora\typora-user-images\image-20200709162437979.png" alt="image-20200709162437979"></p>
+<h1 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h1><p>info replication				#查看当前redis服务信息</p>
+<p>更改redis配置，并启动。默认启动的redis服务都是“主机”。</p>
+<p>开始配置，在从机中配置：slaveof ‘主机host’ ‘主机port’</p>
+<p>（命令行配置的主从配置，从机重启服务后悔变为默认情况）</p>
+<p>slaveof no one				#使自己变成主机</p>
+<h1 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h1><h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><p>Jedis 是Redis官方推荐的Java连接工具，使用Java连接Redis中间件。</p>
+<p>Jedis jedis &#x3D; new Jedis(“127.0.0.1”,6379);</p>
+<p>使用jedis对象进行操作，与使用命令类似。</p>
+<p>&#x2F;&#x2F;开启事务</p>
+<p>Transaction multi &#x3D; jedis.multi();</p>
+<p>&#x2F;&#x2F;执行事务</p>
+<p>multi.exec();</p>
+<p>&#x2F;&#x2F;放弃事务</p>
+<p>multi.discard();</p>
+<h1 id="SpringBoot中使用Redis"><a href="#SpringBoot中使用Redis" class="headerlink" title="SpringBoot中使用Redis"></a>SpringBoot中使用Redis</h1><p>1，添加依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--redis依赖配置--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>2，配置连接参数</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Spring:</span><br>  <span class="hljs-attr">redis:</span><br>    <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span> <span class="hljs-comment"># Redis服务器地址</span><br>    <span class="hljs-attr">database:</span> <span class="hljs-number">0</span> <span class="hljs-comment"># Redis数据库索引（默认为0）</span><br>    <span class="hljs-attr">port:</span> <span class="hljs-number">6379</span> <span class="hljs-comment"># Redis服务器连接端口</span><br>    <span class="hljs-attr">password:</span> <span class="hljs-comment"># Redis服务器连接密码（默认为空）</span><br>    <span class="hljs-attr">jedis:</span><br>      <span class="hljs-attr">pool:</span><br>        <span class="hljs-attr">max-active:</span> <span class="hljs-number">8</span> <span class="hljs-comment"># 连接池最大连接数（使用负值表示没有限制）</span><br>        <span class="hljs-attr">max-wait:</span> <span class="hljs-string">-1ms</span> <span class="hljs-comment"># 连接池最大阻塞等待时间（使用负值表示没有限制）</span><br>        <span class="hljs-attr">max-idle:</span> <span class="hljs-number">8</span> <span class="hljs-comment"># 连接池中的最大空闲连接</span><br>        <span class="hljs-attr">min-idle:</span> <span class="hljs-number">0</span> <span class="hljs-comment"># 连接池中的最小空闲连接</span><br>    <span class="hljs-attr">timeout:</span> <span class="hljs-string">3000ms</span> <span class="hljs-comment"># 连接超时时间（毫秒）</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>1，自行数据存储</p>
+<p>主要使用redisTemplate</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RedisServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">RedisService</span> &#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> StringRedisTemplate stringRedisTemplate;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> RedisTemplate redisTemplate;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 存储数据</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(String key, String value)</span> &#123;<br>        stringRedisTemplate.opsForValue().set(key, value);<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setObject</span><span class="hljs-params">(String key, Object value)</span> &#123;<br>        redisTemplate.opsForValue().set(key, value);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取数据</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">(String key)</span> &#123;<br>        <span class="hljs-keyword">return</span> stringRedisTemplate.opsForValue().get(key);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 设置超期时间</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">expire</span><span class="hljs-params">(String key, <span class="hljs-type">long</span> expire)</span> &#123;<br>        <span class="hljs-keyword">return</span> stringRedisTemplate.expire(key, expire, TimeUnit.SECONDS);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 删除数据</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">(String key)</span> &#123;<br>        stringRedisTemplate.delete(key);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 自增操作</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> delta 自增步长</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Long <span class="hljs-title function_">increment</span><span class="hljs-params">(String key, <span class="hljs-type">long</span> delta)</span> &#123;<br>        <span class="hljs-keyword">return</span> stringRedisTemplate.opsForValue().increment(key,delta);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>2，使用Spring Cache，进行数据缓存。</p>
+<blockquote>
+<p>缓存有多种可以在Dao层实现，也可以在Service层实现</p>
+<p>Dao层实现缓存，根据ORM框架不同，实现方式略有不同，这里推荐Service层缓存</p>
+</blockquote>
+<p>SpringCache缓存功能的实现是依靠下面的这几个注解完成的。</p>
+<ul>
+<li>@EnableCaching：开启缓存功能</li>
+<li>@CacheConfig：定义公共设置，位于class之上</li>
+<li>@Cacheable：定义缓存，用于触发缓存</li>
+<li>@CachePut：定义更新缓存，触发缓存更新</li>
+<li>@CacheEvict：定义清除缓存，触发缓存清除</li>
+<li>@Caching：组合定义多种缓存功能</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@EnableCaching</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RedisCacheConfig</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">CachingConfigurerSupport</span> &#123;<br>    <span class="hljs-comment">//格式化local日期类 </span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> JavaTimeModule <span class="hljs-title function_">getJavaTimeModule</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">JavaTimeModule</span> <span class="hljs-variable">javaTimeModule</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JavaTimeModule</span>();<br>        javaTimeModule.addSerializer(LocalDateTime.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalDateTimeSerializer</span>(DateTimeFormatter.ofPattern(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>)));<br>        javaTimeModule.addSerializer(LocalDate.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalDateSerializer</span>(DateTimeFormatter.ofPattern(<span class="hljs-string">&quot;yyyy-MM-dd&quot;</span>)));<br>        javaTimeModule.addSerializer(LocalTime.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalTimeSerializer</span>(DateTimeFormatter.ofPattern(<span class="hljs-string">&quot;HH:mm:ss&quot;</span>)));<br>        javaTimeModule.addDeserializer(LocalDateTime.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalDateTimeDeserializer</span>(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)));<br>        javaTimeModule.addDeserializer(LocalDate.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalDateDeserializer</span>(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)));<br>        javaTimeModule.addDeserializer(LocalTime.class,<span class="hljs-keyword">new</span> <span class="hljs-title class_">LocalTimeDeserializer</span>(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));<br>        <span class="hljs-keyword">return</span> javaTimeModule;<br>    &#125;<br><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> RedisSerializer&lt;Object&gt; <span class="hljs-title function_">redisSerializer</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//创建JSON序列化器</span><br>        <span class="hljs-comment">//Use Jackson 2Json RedisSerializer to serialize and deserialize the value of redis (default JDK serialization)</span><br>        Jackson2JsonRedisSerializer&lt;Object&gt; jackson2JsonRedisSerializer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Jackson2JsonRedisSerializer</span>&lt;&gt;(Object.class);<br>        <span class="hljs-type">ObjectMapper</span> <span class="hljs-variable">objectMapper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectMapper</span>();<br><br>        <span class="hljs-comment">//设置日期时间格式化</span><br>        objectMapper.registerModule(TimeUtil.getJavaTimeModule()).registerModule(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ParameterNamesModule</span>());<br><br>        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);<br>        <span class="hljs-comment">//将类名称序列化到json串中</span><br>        objectMapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL);<br>        <span class="hljs-comment">//设置输入时忽略JSON字符串中存在而Java对象实际没有的属性</span><br>        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="hljs-literal">false</span>);<br>        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);<br>        <span class="hljs-keyword">return</span> jackson2JsonRedisSerializer;<br>    &#125;<br><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> RedisTemplate&lt;String, Object&gt; <span class="hljs-title function_">redisTemplate</span><span class="hljs-params">(RedisConnectionFactory connectionFactory)</span> &#123;<br>        RedisSerializer&lt;Object&gt; serializer = redisSerializer();<br>        RedisTemplate&lt;String, Object&gt; redisTemplate = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RedisTemplate</span>&lt;&gt;();<br>        redisTemplate.setConnectionFactory(connectionFactory);<br><br>        <span class="hljs-comment">//Use String RedisSerializer to serialize and deserialize the key value of redis</span><br>        <span class="hljs-type">RedisSerializer</span> <span class="hljs-variable">redisSerializer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringRedisSerializer</span>();<br>        <span class="hljs-comment">//key</span><br>        redisTemplate.setKeySerializer(redisSerializer);<br>        redisTemplate.setHashKeySerializer(redisSerializer);<br>        <span class="hljs-comment">//value</span><br>        redisTemplate.setValueSerializer(serializer);<br>        redisTemplate.setHashValueSerializer(serializer);<br><br>        redisTemplate.afterPropertiesSet();<br>        <span class="hljs-keyword">return</span> redisTemplate;<br><br>    &#125;<br>    <br>    <span class="hljs-comment">//使用redis做缓存器</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> RedisCacheManager <span class="hljs-title function_">redisCacheManager</span><span class="hljs-params">(RedisConnectionFactory redisConnectionFactory)</span> &#123;<br>        <span class="hljs-type">RedisCacheWriter</span> <span class="hljs-variable">redisCacheWriter</span> <span class="hljs-operator">=</span> RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);<br>        <span class="hljs-comment">//设置Redis缓存有效期为1天</span><br>        <span class="hljs-type">RedisCacheConfiguration</span> <span class="hljs-variable">redisCacheConfiguration</span> <span class="hljs-operator">=</span> RedisCacheConfiguration.defaultCacheConfig()<br>                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer())).entryTtl(Duration.ofDays(<span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RedisCacheManager</span>(redisCacheWriter, redisCacheConfiguration);<br>    &#125;<br>    <br>    <span class="hljs-comment">//</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> CacheManager <span class="hljs-title function_">cacheManager</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">SimpleCacheManager</span> <span class="hljs-variable">cacheManager</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleCacheManager</span>();<br>        cacheManager.setCaches(Arrays.asList(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentMapCache</span>(<span class="hljs-string">&quot;default&quot;</span>)));<br>        <span class="hljs-keyword">return</span> cacheManager;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Cacheable(value = &quot;schoolInfo&quot;, key = &quot;&#123;#sid&#125;+&#x27;-&#x27;+&#123;#name&#125;&quot;, unless = &quot;#result eq null&quot;)</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>3，格式化储存数据，自定义RedisTemplate以Json格式进行缓存。(代码案例如上)</p>
+<hr>
+<h2 id="Redis问题排查"><a href="#Redis问题排查" class="headerlink" title="Redis问题排查:"></a>Redis问题排查:</h2><p>在spring-boot-starter-data-redis中是使用lettuce做连接,发现报错:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">org.springframework.data.redis.RedisSystemException: Redis exception; nested exception is io.lettuce.core.RedisException: java.io.IOException: Connection reset by peer<br></code></pre></td></tr></table></figure>
+
+<p>一种解决方案:  修改你的 Redis 服务端配置</p>
+<ol>
+<li><p>修改前，我们先查看 Redis 配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"># 查看当前连接数<br>127.0.0.1:6379&gt; info clients<br># Clients<br>connected_clients:3<br>client_recent_max_input_buffer:8<br>client_recent_max_output_buffer:0<br>blocked_clients:0<br>tracking_clients:0<br>clients_in_timeout_table:0<br># 查看超时<br>127.0.0.1:6379&gt; config get time*<br>1) &quot;timeout&quot;<br>2) &quot;0&quot;<br># 查看最大存活时间<br>127.0.0.1:6379&gt; config get tcp*<br>1) &quot;tcp-keepalive&quot;<br>2) &quot;300&quot;<br>3) &quot;tcp-backlog&quot;<br>4) &quot;511&quot;<br># 查看最大客户端数<br>127.0.0.1:6379&gt; config get maxc*<br>1) &quot;maxclients&quot;<br>2) &quot;10000&quot;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>修改 Redis 配置（临时生效，重启 Redis 失效，想持久有效可修改配置文件）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"># 最大连接数 3W<br>config set maxclients 30000<br><br># 超时时间 300 秒<br>config set timeout 300<br><br># 最大存活时间 60 秒<br>config set tcp-keepalive 60<br></code></pre></td></tr></table></figure></li>
+</ol>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/02/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02019%E5%B9%B42%E6%9C%88%E6%9F%90%E6%97%A5/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">褪去了职场新手光环的我，该何去何从？</div></div></a></div><div class="next-post pull-right"><a href="/2020/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/RabbitMQ/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用记录_RabbitMQ</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2020/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/MongoDB/" title="使用记录_MongoDB"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2020-01-01</div><div class="title">使用记录_MongoDB</div></div></a></div><div><a href="/2020/01/01/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/RabbitMQ/" title="使用记录_RabbitMQ"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2020-01-01</div><div class="title">使用记录_RabbitMQ</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/goutou_118.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/c759b504ebfdf.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.35;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);"> 试着<b style="color:#fff">学</b>；<br> 试着<b style="color:#fff">说</b>；<br> 试着<b style="color:#fff">写</b>；<br> 试着<b style="color:#fff">做</b>；<br> 试着,<b style="color:#fff">知行合一</b>；<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/dogs_run.gif"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">踱鸽&amp;水晶蟹</h1><div class="author-info__desc">咸鱼偶尔也得翻个身</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/duo-ge" target="_blank" title="Github"><i class="fa-brands fa-square-github faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:1070800500@qq.com" target="_blank" title="Email"><i class="fa-solid fa-envelope faa-tada"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86Redis"><span class="toc-number">1.</span> <span class="toc-text">初识Redis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">常用命令：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">String 类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">List类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">Set类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">Hash类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zset%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">Zset类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.6.</span> <span class="toc-text">特殊数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">持久化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">4.</span> <span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7-Watch"><span class="toc-number">4.1.</span> <span class="toc-text">监控 Watch</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">主从复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F"><span class="toc-number">6.</span> <span class="toc-text">哨兵模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jedis"><span class="toc-number">7.</span> <span class="toc-text">Jedis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot%E4%B8%AD%E4%BD%BF%E7%94%A8Redis"><span class="toc-number">8.</span> <span class="toc-text">SpringBoot中使用Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5"><span class="toc-number">8.1.</span> <span class="toc-text">Redis问题排查:</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/09/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02024%E5%B9%B45%E6%9C%889%E6%97%A5/" title="没有那么不堪，不要妄自菲薄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="没有那么不堪，不要妄自菲薄"/></a><div class="content"><a class="title" href="/2024/05/09/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02024%E5%B9%B45%E6%9C%889%E6%97%A5/" title="没有那么不堪，不要妄自菲薄">没有那么不堪，不要妄自菲薄</a><time datetime="2024-05-08T23:00:00.000Z" title="发表于 2024-05-09 07:00:00">2024-05-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02022%E5%B9%B4%E6%9F%90%E6%9C%88/" title="知识付费"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="知识付费"/></a><div class="content"><a class="title" href="/2022/01/01/%E5%BF%83%E6%83%85%E9%9A%8F%E8%AE%B0/%E9%9A%8F%E8%AE%B02022%E5%B9%B4%E6%9F%90%E6%9C%88/" title="知识付费">知识付费</a><time datetime="2021-12-31T23:00:00.000Z" title="发表于 2022-01-01 07:00:00">2022-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Mysql%E5%B8%B8%E7%94%A8%E8%BF%90%E7%BB%B4%E7%BB%9F%E8%AE%A1%E8%AF%AD%E5%8F%A5/" title="Mysql常用运维统计语句"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mysql常用运维统计语句"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Mysql%E5%B8%B8%E7%94%A8%E8%BF%90%E7%BB%B4%E7%BB%9F%E8%AE%A1%E8%AF%AD%E5%8F%A5/" title="Mysql常用运维统计语句">Mysql常用运维统计语句</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%9B%BE%E7%A4%BA/" title="git基础命令图示"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git基础命令图示"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%9B%BE%E7%A4%BA/" title="git基础命令图示">git基础命令图示</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" title="年度计划"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="年度计划"/></a><div class="content"><a class="title" href="/2021/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" title="年度计划">年度计划</a><time datetime="2020-12-31T23:00:00.000Z" title="发表于 2021-01-01 07:00:00">2021-01-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="踱鸽&amp;水晶蟹" target="_blank">踱鸽&amp;水晶蟹</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="苏ICP备2022018333号">苏ICP备2022018333号</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">程序员-踱鸽</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="博客站点"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="博客站点"/><span class="back-menu-item-text">博客站点</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://gitee.com/duo-ge" title="gitee"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="gitee"/><span class="back-menu-item-text">gitee</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">插画师-水晶蟹</div><div class="back-menu-list"><a class="back-menu-item" href="/album/" title="插画师图集"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="插画师图集"/><span class="back-menu-item-text">插画师图集</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://emotion.xiaokang.me/#/" title="表情包速查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="表情包速查"/><span class="back-menu-item-text">表情包速查</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fontawesome.com/icons" title="fontawesome6图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/icon/gu.ico" alt="fontawesome6图标"/><span class="back-menu-item-text">fontawesome6图标</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 全部</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 作品</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/projects/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 项目</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 图集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 分享</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 影视</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 书籍</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/web/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 梗言梗语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 冷暖自知</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Java/" style="font-size: 0.88rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>2</sup></a><a href="/tags/Mysql/" style="font-size: 0.88rem;">Mysql<sup>2</sup></a><a href="/tags/RabbitMQ/" style="font-size: 0.88rem;">RabbitMQ<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/redis/" style="font-size: 0.88rem;">redis<sup>1</sup></a><a href="/tags/seata/" style="font-size: 0.88rem;">seata<sup>1</sup></a><a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 0.88rem;">中间件<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 0.88rem;">代码<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">工具<sup>2</sup></a><a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 0.88rem;">标签<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=5010185739&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.onmicrosoft.cn/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://npm.onmicrosoft.cn/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://npm.onmicrosoft.cn/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.asteroidrocket.top/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+      imageUploader: true,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    anzhiyu.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline.css')
+      if (false) await getCSS('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline-meta.css')
+      const { init } = await import('https://npm.onmicrosoft.cn/@waline/client@3.1.3/dist/waline.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://waline.asteroidrocket.top/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="/js/custom.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.onmicrosoft.cn/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.onmicrosoft.cn/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.onmicrosoft.cn/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"]):not([href="/images/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
